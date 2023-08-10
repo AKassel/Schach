@@ -1,0 +1,14 @@
+
+
+Bot
+1.1 Es ermöglichen, dass der Bot gegen sich selbst spielt (einen Button um ihn das erste mal ziehen zu lassen)
+2. Performance verbessern (3ms pro Zug zum Figuren Zählen)
+
+Design
+2. Die Exception beim Schachmatt abfangen und anzeigen wer gewonnen hat (wenn der spieler Matt gesetzt wird kommt keine Exception)
+3. Buttons (z.B. in einem zweiten Fenster) hinzufügen, mit denen man z.B. einstellen kann ob und welche Farbe der Bot spielt
+4. Etwas einabauen, dass abfragt für welche Farbe(n) der bot spielen soll
+5. In der MouseUp Methode abfragen wozu der Bauer befördert werden soll
+
+
+Die Test Methode bleibt nach 4sekunden stehen wenn sie beim ZugMachen rekursiv aufgerufen wird (ka warum der StackOverflow nur selten im debugger angezeigt wird)
