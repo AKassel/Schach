@@ -172,10 +172,9 @@ namespace Schach
         private void RemoveFigureFromField(Figur figur1)
         {
                 figur1.Parent.Controls.Remove(figur1);
-                figur1.Dispose();
-            
+                figur1.Dispose();        
         }
-
+        
 
 
         public void ChessBoard_MouseDown(object sender, MouseEventArgs e)
