@@ -171,8 +171,12 @@ namespace Schach
         }
         private void RemoveFigureFromField(Figur figur1)
         {
-                figur1.Parent.Controls.Remove(figur1);
-                figur1.Dispose();        
+            Panel panel = chessBoardPanels[figur1.row, figur1.col];
+            if (panel != null)
+            {
+                panel.Controls.Remove(figur1);
+                figur1.Dispose();
+            }
         }
         
 

@@ -548,7 +548,7 @@ namespace Schach
         {
             Panel panel = schachfeld1.schachfeld[zug.row, zug.col];
 
-            if (panel.Controls.Count > 0 && panel.Controls[0] is Figur figur1 && figur1 != zug.figur)
+            if (panel.Controls.Count > 0 && panel.Controls[0] is Figur figur1 )
             {
                 // PictureBox vom Panel entfernen und freigeben
                 zug.geschlageneFigur = figur1;
@@ -754,11 +754,16 @@ namespace Schach
             List<Zug> MoeglicheZuege = new List<Zug>();
             List<Figur> figurenAmZug = new List<Figur>();
                 figurenAmZug = schachfeld1.ListDerFiugrenAmZug();
+            /*
             foreach (Figur figur in figurenAmZug)
             {
                 MoeglicheZuege.AddRange(MoeglicheZuegeHinzufuegen(figur, schachfeld1));
             }
-
+            */
+            for(int i = 0; i < figurenAmZug.Count; i++)
+            {
+                MoeglicheZuege.AddRange(MoeglicheZuegeHinzufuegen(figurenAmZug[i], schachfeld1));
+            }
             return MoeglicheZuege;
         }
 
