@@ -36,10 +36,6 @@ namespace Schach
         
         //Mit true bedeutet der Bot spielt weiss, false bedeutet der Bot spielt schwarz.
 
-        public void Ziehen()
-        {
-            bot.BessererZug(bot.schachfeld,2);
-        }
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -163,7 +159,7 @@ namespace Schach
             figur.MouseMove += new MouseEventHandler(ChessBoard_MouseMove);
 
             // Fügen Sie die PictureBox zum Panel hinzu
-            bot.schachfeld.schachfeld[figur.row,figur.col].Controls.Add(figur);
+            chessBoardPanels[figur.row,figur.col].Controls.Add(figur);
             if (figur.weiss)
             {
                 bot.schachfeld.WeisseFiguren.Add(figur);
@@ -173,16 +169,11 @@ namespace Schach
                 bot.schachfeld.SchwarzeFiguren.Add(figur);
             }
         }
-        private void RemoveFigureFromField(Figur figur1, Panel[,] Schachfeld)
+        private void RemoveFigureFromField(Figur figur1)
         {
-            Panel panel = Schachfeld[figur1.row, figur1.col];
-
-            // Überprüfen, ob das Panel eine PictureBox enthält
-            if (panel.Contains(figur1))
-            {
-                panel.Controls.Remove(figur1);
+                figur1.Parent.Controls.Remove(figur1);
                 figur1.Dispose();
-            }
+            
         }
 
 
@@ -277,10 +268,24 @@ namespace Schach
                             bot.ZugMachen(zug, bot.schachfeld);
                             if (zug.befoerdert != null)
                             {
-                                RemoveFigureFromField(zug.figur,chessBoardPanels);
+                                RemoveFigureFromField(zug.figur);
                                 PlaceFigureOnField(zug.befoerdert);
+                                
                             }
-                           
+                            await Task.Delay(50);
+                            //if (spielfeld == schachfeld)
+                            {
+
+                                if (bot.schachfeld.weissAmZug == bot.weiss)
+                                {
+                                    if (!bot.Test)
+                                    {
+                                        
+                                       // bot.Ziehen();
+                                    }
+                                }
+                            }
+
 
                         }
                         else
@@ -288,9 +293,10 @@ namespace Schach
                             //Wenn der Zug nicht erlaubt ist, wird die Figur zurueck aufs sourcePanel gesetzt
                             //und von dem nicht erlaubtem Feld entfernt
                             //Esseiden sie wurde garnicht bewegt
+                            //Stimmt aber scheinbar alles garnicht und das ist nutzlos geworden
                             if (sourcePanel != targetPanel)
                             {
-                                RemoveFigureFromField(selectedFigur, bot.schachfeld.schachfeld);
+                                //RemoveFigureFromField(selectedFigur);
                             }
 
                             selectedFigur.row = tableLayoutPanel.GetRow(sourcePanel);
