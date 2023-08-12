@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Arne\\Schach Programm\\Schach v0.5.1 akzeptable Performance, schlechtes Design\\Schach\\Schach.csproj",
+      "projectUniqueName": "C:\\Users\\Arne\\Source\\Repos\\AKassel\\Schach\\Schach v0.5.2 akzeptable Performance, schlechtes Design\\Schach\\Schach.csproj",
       "projectName": "Schach",
-      "projectPath": "D:\\Arne\\Schach Programm\\Schach v0.5.1 akzeptable Performance, schlechtes Design\\Schach\\Schach.csproj",
+      "projectPath": "C:\\Users\\Arne\\Source\\Repos\\AKassel\\Schach\\Schach v0.5.2 akzeptable Performance, schlechtes Design\\Schach\\Schach.csproj",
       "packagesPath": "C:\\Users\\Arne\\.nuget\\packages\\",
-      "outputPath": "D:\\Arne\\Schach Programm\\Schach v0.5.1 akzeptable Performance, schlechtes Design\\Schach\\obj\\",
+      "outputPath": "C:\\Users\\Arne\\Source\\Repos\\AKassel\\Schach\\Schach v0.5.2 akzeptable Performance, schlechtes Design\\Schach\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

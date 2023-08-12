@@ -6,20 +6,22 @@ namespace Schach
 {
     partial class Schach
     {
-        // Beispielaufruf, um den König auf das Feld (0, 0) zu platzieren
-        Image weisserKoenig = Image.FromFile(@"D:\Arne\Schach Programm\Bilder\king.png"); // Bild der Königsfigur
-        Image weisseDame = Image.FromFile(@"D:\Arne\Schach Programm\Bilder\Dame.png");
-        Image weisserLaeufer = Image.FromFile(@"D:\Arne\Schach Programm\Bilder\Laeufer.png");
-        Image weisserSpringer = Image.FromFile(@"D:\Arne\Schach Programm\Bilder\Springer.png");
-        Image weisserTurm = Image.FromFile(@"D:\Arne\Schach Programm\Bilder\Turm.png");
-        Image weisserBauer = Image.FromFile(@"D:\Arne\Schach Programm\Bilder\Bauer.png");
+        string basePath = null;
+        string imagesPath = null;
 
-        Image schwarzerKoenig = Image.FromFile(@"D:\Arne\Schach Programm\Bilder\SKing.png"); // Bild der Königsfigur
-        Image schwarzeDame = Image.FromFile(@"D:\Arne\Schach Programm\Bilder\SDame.png");
-        Image schwarzerLaeufer = Image.FromFile(@"D:\Arne\Schach Programm\Bilder\SLaeufer.png");
-        Image schwarzerSpringer = Image.FromFile(@"D:\Arne\Schach Programm\Bilder\SSpringer.png");
-        Image schwarzerTurm = Image.FromFile(@"D:\Arne\Schach Programm\Bilder\STurm.png");
-        Image schwarzerBauer = Image.FromFile(@"D:\Arne\Schach Programm\Bilder\SBauer.png");
+        Image weisserKoenig = null;
+        Image weisseDame = null;
+        Image weisserLaeufer = null;
+        Image weisserSpringer = null;
+        Image weisserTurm = null;
+        Image weisserBauer = null;
+
+        Image schwarzerKoenig = null;
+        Image schwarzeDame = null;
+        Image schwarzerLaeufer = null;
+        Image schwarzerSpringer = null;
+        Image schwarzerTurm = null;
+        Image schwarzerBauer = null;
         //PlaceFigureOnField(0, 0, kingImage);
 
         Bot bot;
