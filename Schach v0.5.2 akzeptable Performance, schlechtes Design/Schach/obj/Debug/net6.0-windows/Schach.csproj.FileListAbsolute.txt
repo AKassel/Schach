@@ -192,3 +192,20 @@ D:\Arne\Schach Programm\Schach v0.5.1 akzeptable Performance, schlechtes Design\
 D:\Arne\Schach Programm\Schach v0.5.1 akzeptable Performance, schlechtes Design\Schach\obj\Debug\net6.0-windows\Schach.pdb
 D:\Arne\Schach Programm\Schach v0.5.1 akzeptable Performance, schlechtes Design\Schach\obj\Debug\net6.0-windows\Schach.genruntimeconfig.cache
 D:\Arne\Schach Programm\Schach v0.5.1 akzeptable Performance, schlechtes Design\Schach\obj\Debug\net6.0-windows\ref\Schach.dll
+C:\Users\Arne\Source\Repos\AKassel\Schach\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\bin\Debug\net6.0-windows\Schach.exe
+C:\Users\Arne\Source\Repos\AKassel\Schach\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\bin\Debug\net6.0-windows\Schach.deps.json
+C:\Users\Arne\Source\Repos\AKassel\Schach\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\bin\Debug\net6.0-windows\Schach.runtimeconfig.json
+C:\Users\Arne\Source\Repos\AKassel\Schach\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\bin\Debug\net6.0-windows\Schach.dll
+C:\Users\Arne\Source\Repos\AKassel\Schach\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\bin\Debug\net6.0-windows\Schach.pdb
+C:\Users\Arne\Source\Repos\AKassel\Schach\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\obj\Debug\net6.0-windows\Schach.csproj.AssemblyReference.cache
+C:\Users\Arne\Source\Repos\AKassel\Schach\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\obj\Debug\net6.0-windows\Schach.Schach.resources
+C:\Users\Arne\Source\Repos\AKassel\Schach\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\obj\Debug\net6.0-windows\Schach.csproj.GenerateResource.cache
+C:\Users\Arne\Source\Repos\AKassel\Schach\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\obj\Debug\net6.0-windows\Schach.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Arne\Source\Repos\AKassel\Schach\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\obj\Debug\net6.0-windows\Schach.AssemblyInfoInputs.cache
+C:\Users\Arne\Source\Repos\AKassel\Schach\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\obj\Debug\net6.0-windows\Schach.AssemblyInfo.cs
+C:\Users\Arne\Source\Repos\AKassel\Schach\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\obj\Debug\net6.0-windows\Schach.csproj.CoreCompileInputs.cache
+C:\Users\Arne\Source\Repos\AKassel\Schach\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\obj\Debug\net6.0-windows\Schach.dll
+C:\Users\Arne\Source\Repos\AKassel\Schach\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\obj\Debug\net6.0-windows\refint\Schach.dll
+C:\Users\Arne\Source\Repos\AKassel\Schach\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\obj\Debug\net6.0-windows\Schach.pdb
+C:\Users\Arne\Source\Repos\AKassel\Schach\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\obj\Debug\net6.0-windows\Schach.genruntimeconfig.cache
+C:\Users\Arne\Source\Repos\AKassel\Schach\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\obj\Debug\net6.0-windows\ref\Schach.dll

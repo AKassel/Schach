@@ -312,9 +312,21 @@ namespace Schach
 
             //Wenn alle Züge die gleicher Bewertung haben wird ein Zufälliger Zug gemacht
             Random random = new Random();
-            int randomZug = random.Next(0, Mz.Count);
-            Zug ZufallsZug = Mz[randomZug];
-            ZufallsZug.figur = ZufallsZug.figur.original;
+            Zug ZufallsZug = null;
+            if (Mz.Count > 0)
+            {
+                int randomZug = random.Next(0, Mz.Count);
+                ZufallsZug = Mz[randomZug];
+                ZufallsZug.figur = ZufallsZug.figur.original;
+                // Verarbeite den ZufallsZug
+            }
+            else
+            {
+                // Zeige eine Benachrichtigung an, dass der Spieler gewonnen hat
+                MessageBox.Show("Herzlichen Glückwunsch! Du hast gewonnen!", "Spielende");
+                return;
+                // Hier kannst du zusätzlichen Code hinzufügen, um das Spiel zurückzusetzen oder zu beenden
+            }
             Zug besterZug;
 
             foreach (Zug zug in Mz)
@@ -736,9 +748,10 @@ namespace Schach
 
         public List<Zug> MoeglicheZuegeFuerWeissOderSchwarzSuchen(Schachfeld schachfeld1)
         {
-            //Der Zug muss immer durch ZugMachen gemacht werden, damit enpassant und die Rochade gemacht werden, dass passiert aber auch in Zug.Bewertung()
+            //Der Zug muss immer durch ZugMachen gemacht werden, damit enpassant und die Rochade gemacht werden
             List<Zug> MoeglicheZuege = new List<Zug>();
-            List<Figur> figurenAmZug = schachfeld1.ListDerFiugrenAmZug();
+            List<Figur> figurenAmZug = new List<Figur>();
+                figurenAmZug = schachfeld1.ListDerFiugrenAmZug();
             foreach (Figur figur in figurenAmZug)
             {
                 MoeglicheZuege.AddRange(MoeglicheZuegeHinzufuegen(figur, schachfeld1));
