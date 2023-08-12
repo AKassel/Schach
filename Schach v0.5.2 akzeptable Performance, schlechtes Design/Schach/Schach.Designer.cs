@@ -28,7 +28,7 @@ namespace Schach
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
         private Panel[,] chessBoardPanels; 
-        private Figur selectedFigur;
+        private Figur selectedFigur = null;
         List<Zug> moeglicheZuege;
         Panel sourcePanel = null;
         Panel targetPanel = null;
@@ -164,10 +164,6 @@ namespace Schach
 
             // Fügen Sie die PictureBox zum Panel hinzu
             bot.schachfeld.schachfeld[figur.row,figur.col].Controls.Add(figur);
-            if(chessBoardPanels[figur.row, figur.col] != bot.schachfeld.schachfeld[figur.row, figur.col])
-            {
-
-            }
             if (figur.weiss)
             {
                 bot.schachfeld.WeisseFiguren.Add(figur);
@@ -175,18 +171,6 @@ namespace Schach
             else
             {
                 bot.schachfeld.SchwarzeFiguren.Add(figur);
-            }
-        }
-        private void RemoveFigureFromField(int row, int col)
-        {
-            Panel panel = chessBoardPanels[row, col];
-
-            // Überprüfen, ob das Panel eine PictureBox enthält
-            if (panel.Controls.Count > 0 && panel.Controls[0] is Figur figur)
-            {
-                // PictureBox vom Panel entfernen und freigeben
-                panel.Controls.Remove(figur);
-                figur.Dispose();
             }
         }
         private void RemoveFigureFromField(Figur figur1, Panel[,] Schachfeld)
@@ -230,6 +214,7 @@ namespace Schach
 
             if (isDragging)
             {
+                //Ueberfluessige Bedingung
                 if (sender == selectedFigur)
                 {
                     
@@ -250,13 +235,9 @@ namespace Schach
                 selectedFigur = null;
                 targetPanel = null;
             }
-            if(bot.schachfeld.schachfeld != chessBoardPanels)
-            {
-
-            }
         }
 
-        public void ChessBoard_MouseUp(object receiver, MouseEventArgs e)
+        public async void ChessBoard_MouseUp(object receiver, MouseEventArgs e)
         {
 
             isDragging = false;
@@ -281,7 +262,6 @@ namespace Schach
                         //Pruefung ob der Zug legal ist, row und col sind von dem Feld auf das gezogen wird 
                         if (moeglicheZuege.Contains(zug))
                         {
-                            //Zug zug;
                             if (selectedFigur is Bauer bauer && (row == 7 || row == 0))
                             {
                                 //Hier muesste man irgendwie waehlen kann wozu man befoerdern will
@@ -293,26 +273,12 @@ namespace Schach
                                      zug = new Zug(selectedFigur, row, col, new Dame(bauer.weiss, row, col, schwarzeDame));
                                 }
                             }
-                            else
-                            {
-                                 
-                            }
-                            //Eigentlich sollte bot.schachfeld() == chessBoardPanels sein, wenn das nicht so ist wäre das... Blöd
-                            if (bot.schachfeld.schachfeld != chessBoardPanels)
-                            {
-
-                            }
 
                             bot.ZugMachen(zug, bot.schachfeld);
                             if (zug.befoerdert != null)
                             {
                                 RemoveFigureFromField(zug.figur,chessBoardPanels);
                                 PlaceFigureOnField(zug.befoerdert);
-                            }
-
-                            if ( bot.schachfeld.schachfeld == chessBoardPanels)
-                            {
-
                             }
                            
 
@@ -324,7 +290,7 @@ namespace Schach
                             //Esseiden sie wurde garnicht bewegt
                             if (sourcePanel != targetPanel)
                             {
-                                RemoveFigureFromField(selectedFigur.row, selectedFigur.col);
+                                RemoveFigureFromField(selectedFigur, bot.schachfeld.schachfeld);
                             }
 
                             selectedFigur.row = tableLayoutPanel.GetRow(sourcePanel);

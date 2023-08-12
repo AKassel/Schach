@@ -22,7 +22,7 @@ namespace Schach
             schwarzerBauer = Image.FromFile(Path.Combine(imagesPath, "SBauer.png"));
             InitializeComponent();
             CreateChessBoard();
-            AttachEventHandlersToPanels();
+           // AttachEventHandlersToPanels();
         }
 
     }

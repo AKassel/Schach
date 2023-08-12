@@ -361,7 +361,7 @@ namespace Schach
             
         }
 
-        public void ZugMachen(Zug zug, Schachfeld spielfeld)
+        public async void ZugMachen(Zug zug, Schachfeld spielfeld)
         {
             Panel[,] Schachfeld = spielfeld.schachfeld;
 
@@ -525,7 +525,7 @@ namespace Schach
             {
                 //sollte eigentlich nicht passieren
             }
-            Schachfeld[row, col].Controls.Add(figur);
+            spielfeld.schachfeld[row, col].Controls.Add(figur);
 
             spielfeld.weissAmZug = !spielfeld.weissAmZug;
             if (spielfeld == schachfeld)
@@ -535,6 +535,7 @@ namespace Schach
                 {
                     if (!Test)
                     {
+                        await Task.Delay(50);
                         Ziehen();
                     }
                 }
@@ -545,8 +546,7 @@ namespace Schach
         {
             Panel panel = schachfeld1.schachfeld[zug.row, zug.col];
 
-            // Überprüfen, ob das Panel eine PictureBox enthält
-            if (panel.Controls.Count > 0 && panel.Controls[0] is Figur figur1)
+            if (panel.Controls.Count > 0 && panel.Controls[0] is Figur figur1 && figur1 != zug.figur)
             {
                 // PictureBox vom Panel entfernen und freigeben
                 zug.geschlageneFigur = figur1;
