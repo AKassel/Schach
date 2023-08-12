@@ -271,19 +271,8 @@ namespace Schach
                                 PlaceFigureOnField(zug.befoerdert);
                                 
                             }
-                            await Task.Delay(50);
-                            //if (spielfeld == schachfeld)
-                            {
-
-                                if (bot.schachfeld.weissAmZug == bot.weiss)
-                                {
-                                    if (!bot.Test)
-                                    {
-                                        
-                                       // bot.Ziehen();
-                                    }
-                                }
-                            }
+                           
+                            
 
 
                         }

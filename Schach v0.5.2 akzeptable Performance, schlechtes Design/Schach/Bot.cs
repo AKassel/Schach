@@ -527,8 +527,21 @@ namespace Schach
             }
             spielfeld.schachfeld[row, col].Controls.Add(figur);
 
-            spielfeld.weissAmZug = !spielfeld.weissAmZug;
             
+            spielfeld.weissAmZug = !spielfeld.weissAmZug;
+            if (spielfeld == schachfeld)
+            {
+
+                if (schachfeld.weissAmZug == weiss)
+                {
+                    if (!Test)
+                    {
+                        await Task.Delay(50);
+
+                        Ziehen();
+                    }
+                }
+            }
         }
 
         void RemoveFigureFromField(Zug zug, Schachfeld schachfeld1)
