@@ -3,11 +3,8 @@
 Bot
 1.1 Es ermöglichen, dass der Bot gegen sich selbst spielt (einen Button um ihn das erste mal ziehen zu lassen)
 2. Performance verbessern (3ms pro Zug zum Figuren Zählen)
-4. Rausfinden warum Bauern vom Bot diagonal vor eigene Figuren ziehen können (evtl irgendwas mit enpassant)
-5. Rausfinden warum der Bot seinen Eigenen König mit einem Bauer schlagen kann
-6. Rausfinden warum der Bot sich mit einer Rochade aus dem Schach befreien kann
-7. Rausfinden warum der König vom Bot, gedeckte Figuren schlagen kann
-8. Rausfinden wo bei beim Bauern befördern eine Enumeration may not execute collection was modifierd exception entstehen kann
+3. Verhindern dass der König vom Bot gedeckte Figuren schlägt, wenn er im Schach steht
+4. Die Bewertung korrigieren (weder Figuren Zaehlen noch die zug.bewertung sind zuverlässig richtig)
 
 Design
 3. Buttons (z.B. in einem zweiten Fenster) hinzufügen, mit denen man z.B. einstellen kann ob und welche Farbe der Bot spielt

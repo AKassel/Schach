@@ -13,7 +13,8 @@ namespace Schach
             ApplicationConfiguration.Initialize();
             Schach schach = new Schach();
             Application.Run(schach);
-           
+            
+
         }
     }
 }

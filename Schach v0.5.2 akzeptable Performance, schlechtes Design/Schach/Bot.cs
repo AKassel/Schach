@@ -15,6 +15,7 @@ namespace Schach
     internal class Bot
     {
         public bool weiss;
+        bool sollZiehen;
         public Schachfeld schachfeld;
         public bool Test = false;
 
@@ -29,8 +30,9 @@ namespace Schach
         Image schwarzerLaeufer;
         Image schwarzerSpringer;
         Image schwarzerTurm;
-        public Bot(bool weiss, Schachfeld schachfeld)
+        public Bot(bool weiss, Schachfeld schachfeld, bool sollZiehen)
         {
+            this.sollZiehen = sollZiehen;
             this.weiss = weiss;
             this.schachfeld = schachfeld;
             weisseDame = Image.FromFile(@"D:\Arne\Schach Programm\Bilder\Dame.png");
@@ -93,7 +95,10 @@ namespace Schach
             }
             else
             {
-                BessererZug(schachfeld,3);
+                if (sollZiehen)
+                {
+                    BessererZug(schachfeld, 3);
+                }
             }
            //SchlechterZug(schachfeld);
            //ZufallsZug(schachfeld);
@@ -506,8 +511,12 @@ namespace Schach
             {
                 //RemoveFigureFromField entfernt die Figuren auch aus den Listen und speichert die geschlageneFigur
                 RemoveFigureFromField(zug, spielfeld);
+                if (spielfeld.schachfeld[zug.row,zug.col].Controls.Count != 0)
+                {
+                    spielfeld.schachfeld[zug.row, zug.col].Controls.Clear();
+                }
             }
-            //Das figur null ist, sollte eigentlich nur durch die Deep Copy Felder passieren und wuerde andere Fehler ausloesen
+            //Dass figur null ist, sollte eigentlich nur durch die Deep Copy Felder passieren und wuerde andere Fehler ausloesen
             if (figur != null)
             {
                 figur.row = row;

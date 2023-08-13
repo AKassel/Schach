@@ -27,7 +27,7 @@ namespace Schach
         Bot bot;
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
-        private Panel[,] chessBoardPanels; 
+        public Panel[,] chessBoardPanels; 
         private Figur selectedFigur = null;
         List<Zug> moeglicheZuege;
         Panel sourcePanel = null;
@@ -108,8 +108,23 @@ namespace Schach
                 }
             }
 
-            //Hier koennte etwas eingebaut werden, dass abfragt welche farbe der Bott spielen sollte
-            bot = new Bot(false, new Schachfeld(chessBoardPanels));
+
+            FarbauswahlForm farbForm = new FarbauswahlForm();
+            DialogResult result = farbForm.ShowDialog();
+
+            if (result == DialogResult.Yes)
+            {
+                bot = new Bot(true, new Schachfeld(chessBoardPanels), true);
+            }
+            else if (result == DialogResult.No)
+            {
+                bot = new Bot(false, new Schachfeld(chessBoardPanels), true);
+            }
+            else if (result == DialogResult.Cancel)
+            {
+                bot = new Bot(true, new Schachfeld(chessBoardPanels), false);
+            }
+
 
 
             //Figuren platzieren
