@@ -6,10 +6,5 @@ Bot
 3. Verhindern dass der König vom Bot gedeckte Figuren schlägt, wenn er im Schach steht
 4. Die Bewertung korrigieren (weder Figuren Zaehlen noch die zug.bewertung sind zuverlässig richtig)
 
-Design
-3. Buttons (z.B. in einem zweiten Fenster) hinzufügen, mit denen man z.B. einstellen kann ob und welche Farbe der Bot spielt
-4. Etwas einabauen, dass abfragt für welche Farbe(n) der bot spielen soll
-5. In der MouseUp Methode abfragen wozu der Bauer befördert werden soll
-
 
 Die Test Methode bleibt nach 4sekunden stehen wenn sie beim ZugMachen rekursiv aufgerufen wird (ka warum der StackOverflow nur selten im debugger angezeigt wird)

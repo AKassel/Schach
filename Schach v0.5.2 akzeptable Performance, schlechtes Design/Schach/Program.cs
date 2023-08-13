@@ -12,6 +12,7 @@ namespace Schach
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Schach schach = new Schach();
+            //schach.Ziehen();
             Application.Run(schach);
             
 

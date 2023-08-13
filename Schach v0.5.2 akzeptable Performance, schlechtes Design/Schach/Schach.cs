@@ -4,6 +4,9 @@ namespace Schach
     {
         public Schach()
         {
+            this.Load += Schach_Load;
+            this.Shown += MainForm_Shown;
+            this.bot = bot;
             string basePath = AppDomain.CurrentDomain.BaseDirectory;
             string imagesPath = Path.Combine(basePath, "..", "..", "..", "..", "..", "Bilder");
 
@@ -22,8 +25,8 @@ namespace Schach
             schwarzerBauer = Image.FromFile(Path.Combine(imagesPath, "SBauer.png"));
             InitializeComponent();
             CreateChessBoard();
-           // AttachEventHandlersToPanels();
+            
+            // AttachEventHandlersToPanels();
         }
-
     }
 }

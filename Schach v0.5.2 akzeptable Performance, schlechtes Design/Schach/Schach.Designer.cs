@@ -88,10 +88,32 @@ namespace Schach
             Text = "Schachfeld";
             ResumeLayout(false);
         }
-
+        private void Schach_Load(object sender, EventArgs e)
+        {
+            
+        }
         #endregion
         public void CreateChessBoard()
         {
+            FarbauswahlForm farbForm = new FarbauswahlForm();
+            DialogResult result = farbForm.ShowDialog();
+
+            if (result == DialogResult.Yes)
+            {
+                bot = new Bot(true, new Schachfeld(chessBoardPanels), true);
+            }
+            else if (result == DialogResult.No)
+            {
+                bot = new Bot(false, new Schachfeld(chessBoardPanels), true);
+            }
+            else if (result == DialogResult.Cancel)
+            {
+                bot = new Bot(false, new Schachfeld(chessBoardPanels), false);
+            }
+            else if (result == DialogResult.OK)
+            {
+                bot = new Bot(true, new Schachfeld(chessBoardPanels), false);
+            }
             this.SuspendLayout();
             
             // Erstellen Sie das Schachfeld (TableLayoutPanel)
@@ -107,25 +129,6 @@ namespace Schach
                     this.chessBoardPanels[row, col] = panel;
                 }
             }
-
-
-            FarbauswahlForm farbForm = new FarbauswahlForm();
-            DialogResult result = farbForm.ShowDialog();
-
-            if (result == DialogResult.Yes)
-            {
-                bot = new Bot(true, new Schachfeld(chessBoardPanels), true);
-            }
-            else if (result == DialogResult.No)
-            {
-                bot = new Bot(false, new Schachfeld(chessBoardPanels), true);
-            }
-            else if (result == DialogResult.Cancel)
-            {
-                bot = new Bot(true, new Schachfeld(chessBoardPanels), false);
-            }
-
-
 
             //Figuren platzieren
             PlaceFigureOnField(new Turm(true, 7, 7, weisserTurm));
@@ -154,15 +157,17 @@ namespace Schach
             {
                 PlaceFigureOnField(new Bauer(false, 1, i, schwarzerBauer));
             }
-           
 
             this.ResumeLayout(false);
-            if (bot.weiss==bot.schachfeld.weissAmZug)
+            
+        }
+        public void Ziehen()
+        {
+            if (bot.weiss == bot.schachfeld.weissAmZug)
             {
-                bot.Ziehen();
+                    bot.Ziehen();
             }
         }
-
         private void PlaceFigureOnField(Figur figur)
         {
             bot.schachfeld.schachfeld = chessBoardPanels;
@@ -193,11 +198,17 @@ namespace Schach
                 figur1.Dispose();
             }
         }
-        
 
+        private async void MainForm_Shown(object sender, EventArgs e)
+        {
+            await Task.Delay(50);
+                Ziehen();
+            
+        }
 
         public void ChessBoard_MouseDown(object sender, MouseEventArgs e)
         {
+            
             if (sender is Panel panel1)
             {
                 isDragging = false;
@@ -273,13 +284,54 @@ namespace Schach
                             if (selectedFigur is Bauer bauer && (row == 7 || row == 0))
                             {
                                 //Hier muesste man irgendwie waehlen kann wozu man befoerdern will
-                                if (bauer.weiss) {
-                                     zug = new Zug(selectedFigur, row, col, new Dame(bauer.weiss, row, col, weisseDame));
-                                }
-                                else
+                                BauerBefoerdernAbfrage befoerdernAbfrage = new BauerBefoerdernAbfrage();
+                                DialogResult result = befoerdernAbfrage.ShowDialog();
+
+                                if (result == DialogResult.Yes)
                                 {
-                                     zug = new Zug(selectedFigur, row, col, new Dame(bauer.weiss, row, col, schwarzeDame));
+                                    if (bauer.weiss)
+                                    {
+                                        zug = new Zug(selectedFigur, row, col, new Dame(bauer.weiss, row, col, weisseDame));
+                                    }
+                                    else
+                                    {
+                                        zug = new Zug(selectedFigur, row, col, new Dame(bauer.weiss, row, col, schwarzeDame));
+                                    }
                                 }
+                                else if (result == DialogResult.No)
+                                {
+                                    if (bauer.weiss)
+                                    {
+                                        zug = new Zug(selectedFigur, row, col, new Laeufer(bauer.weiss, row, col, weisserLaeufer));
+                                    }
+                                    else
+                                    {
+                                        zug = new Zug(selectedFigur, row, col, new Laeufer(bauer.weiss, row, col, schwarzerLaeufer));
+                                    }
+                                }
+                                else if (result == DialogResult.Cancel)
+                                {
+                                    if (bauer.weiss)
+                                    {
+                                        zug = new Zug(selectedFigur, row, col, new Springer(bauer.weiss, row, col, weisserSpringer));
+                                    }
+                                    else
+                                    {
+                                        zug = new Zug(selectedFigur, row, col, new Springer(bauer.weiss, row, col, schwarzerSpringer));
+                                    }
+                                }
+                                else if(result == DialogResult.OK)
+                                {
+                                    if (bauer.weiss)
+                                    {
+                                        zug = new Zug(selectedFigur, row, col, new Turm(bauer.weiss, row, col, weisserTurm));
+                                    }
+                                    else
+                                    {
+                                        zug = new Zug(selectedFigur, row, col, new Turm(bauer.weiss, row, col, schwarzerTurm));
+                                    }
+                                }
+                                
                             }
                             targetPanel.Controls.Remove(selectedFigur);
                             bot.ZugMachen(zug, bot.schachfeld);
@@ -289,10 +341,6 @@ namespace Schach
                                 PlaceFigureOnField(zug.befoerdert);
                                 
                             }
-                           
-                            
-
-
                         }
                         else
                         {

@@ -15,10 +15,10 @@ namespace Schach
     internal class Bot
     {
         public bool weiss;
-        bool sollZiehen;
+        public bool sollZiehen;
         public Schachfeld schachfeld;
         public bool Test = false;
-
+        public bool alleinSpielen = false;
         // Bilder werden gebraucht um Bauern zu befoerdern
 
         Image weisseDame;
@@ -50,7 +50,7 @@ namespace Schach
         {
 
         }
-        public void Ziehen()
+        public async void Ziehen()
         {
             if (Test)
             {
@@ -99,6 +99,11 @@ namespace Schach
                 {
                     BessererZug(schachfeld, 3);
                 }
+                if (!sollZiehen && (weiss || alleinSpielen))
+                {
+                    AlleinSpielenAsync();
+                    
+                }
             }
            //SchlechterZug(schachfeld);
            //ZufallsZug(schachfeld);
@@ -106,6 +111,24 @@ namespace Schach
 
 
         }
+        async public Task BessererZugAsync(Schachfeld schachfeld, int tiefe)
+        {
+            
+             await Task.Run(() => BessererZug(schachfeld, tiefe));
+            
+        }
+
+        async public Task AlleinSpielenAsync()
+        {
+            await BessererZugAsync(schachfeld, 3);
+            //weiss = !weiss;
+            // Code, der die Oberfläche aktualisiert, kann hier ausgeführt werden
+
+            // Optional: Führe 'AlleinSpielenAsync()' erneut nach einer Verzögerung aus
+            await Task.Delay(TimeSpan.FromSeconds(1));
+            await AlleinSpielenAsync();
+        }
+
         public int MoeglicheZuegeTest(int Tiefe, Schachfeld schachfeldOrg)
         {
             List<Zug> zuege = MoeglicheZuegeFuerWeissOderSchwarzSuchen(schachfeldOrg);
@@ -254,7 +277,7 @@ namespace Schach
             }
             return zuege;
         }
-        public void BessererZug(Schachfeld Schachfeld1, int rekursion)
+        public async void BessererZug(Schachfeld Schachfeld1, int rekursion)
         {
             //Durch die Deep Coypy verschwinden die Figuren nicht mehr und Ziehen wird durch ZugMachen auch nicht rekursiv aufgerufen
             Schachfeld Schachfeld = new Schachfeld(Schachfeld1);
@@ -354,7 +377,10 @@ namespace Schach
                     besterZug = ZufallsZug;
                 }
                 besterZug.figur = besterZug.figur.original;
-                ZugMachen(besterZug, Schachfeld1);
+
+                
+                 ZugMachen(besterZug, Schachfeld1);
+                
             }
             
                 
@@ -544,7 +570,6 @@ namespace Schach
                     if (!Test)
                     {
                         await Task.Delay(50);
-
                         Ziehen();
                     }
                 }
