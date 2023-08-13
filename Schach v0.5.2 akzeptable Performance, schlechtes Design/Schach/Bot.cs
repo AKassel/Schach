@@ -195,7 +195,7 @@ namespace Schach
                 return zuege;
             }
             object lockobject = new object();
-            if (true)
+            if (false)
             {
                 Parallel.ForEach(zuege, zug =>
                 {
@@ -506,11 +506,6 @@ namespace Schach
             {
                 //RemoveFigureFromField entfernt die Figuren auch aus den Listen und speichert die geschlageneFigur
                 RemoveFigureFromField(zug, spielfeld);
-                if(Schachfeld[row, col].Controls.OfType<Figur>().FirstOrDefault() == zug.geschlageneFigur)
-                {
-
-                }
-
             }
             //Das figur null ist, sollte eigentlich nur durch die Deep Copy Felder passieren und wuerde andere Fehler ausloesen
             if (figur != null)

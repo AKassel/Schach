@@ -10,7 +10,6 @@ Bot
 8. Rausfinden wo bei beim Bauern befördern eine Enumeration may not execute collection was modifierd exception entstehen kann
 
 Design
-2. Die Exception beim Schachmatt abfangen und anzeigen wer gewonnen hat (wenn der spieler Matt gesetzt wird kommt keine Exception)
 3. Buttons (z.B. in einem zweiten Fenster) hinzufügen, mit denen man z.B. einstellen kann ob und welche Farbe der Bot spielt
 4. Etwas einabauen, dass abfragt für welche Farbe(n) der bot spielen soll
 5. In der MouseUp Methode abfragen wozu der Bauer befördert werden soll
