@@ -233,7 +233,6 @@ namespace Schach
 
         public async void ChessBoard_MouseUp(object receiver, MouseEventArgs e)
         {
-
             isDragging = false;
             //targetPanel suchen
             //Das target Panel Conatained die Figur schon, da die Fiugr in Mouse move bewegt wird
@@ -267,7 +266,7 @@ namespace Schach
                                      zug = new Zug(selectedFigur, row, col, new Dame(bauer.weiss, row, col, schwarzeDame));
                                 }
                             }
-
+                            targetPanel.Controls.Remove(selectedFigur);
                             bot.ZugMachen(zug, bot.schachfeld);
                             if (zug.befoerdert != null)
                             {

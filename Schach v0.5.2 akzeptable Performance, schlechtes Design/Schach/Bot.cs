@@ -184,7 +184,6 @@ namespace Schach
                     int AltCol = zug.figur.col;
 
                     ZugMachen(zug, schachfeld1);
-
                     //int zugbewertung = schachfeld1.bewertung;
                     int gezaehlt = schachfeld1.bewertung;//zug.FigurenZaehlen(schachfeld1);
                     zug.bewertung = gezaehlt;
@@ -196,7 +195,7 @@ namespace Schach
                 return zuege;
             }
             object lockobject = new object();
-            if (false)
+            if (true)
             {
                 Parallel.ForEach(zuege, zug =>
                 {
@@ -210,11 +209,8 @@ namespace Schach
                         zug.figur = Kopie.figurBei(zug.figur.row, zug.figur.col);
                     }
                     ZugMachen(zug, Kopie);
-                    //Schachfeld Kopie2 = new Schachfeld(Kopie);
-                    ZugRueckgaengigMachen(zug, Kopie, AltRow, AltCol);
-
                     zug.folgeZuege = FolgeZuegeHinzufuegen(Tiefe - 1, MoeglicheZuegeFuerWeissOderSchwarzSuchen(Kopie), Kopie);
-
+                    ZugRueckgaengigMachen(zug, Kopie, AltRow, AltCol);
                     
                     
                 });
@@ -228,6 +224,7 @@ namespace Schach
 
                     ZugMachen(zug, schachfeld1);
                     zug.folgeZuege = FolgeZuegeHinzufuegen(Tiefe - 1, MoeglicheZuegeFuerWeissOderSchwarzSuchen(schachfeld1), schachfeld1);
+                    //Ab hier stimmt das Figuren Zaehlen nicht mehr, warum auch immer
                     ZugRueckgaengigMachen(zug, schachfeld1, AltRow, AltCol);
                     if (zug.folgeZuege.Count == 0)
                     {
@@ -256,7 +253,6 @@ namespace Schach
         {
             //Durch die Deep Coypy verschwinden die Figuren nicht mehr und Ziehen wird durch ZugMachen auch nicht rekursiv aufgerufen
             Schachfeld Schachfeld = new Schachfeld(Schachfeld1);
-
             List<Zug> Mz = MoeglicheZuegeFuerWeissOderSchwarzSuchen(Schachfeld);
             //Debug.WriteLine("A: " + ZuegeAufDemErstenFeld.Count);
             int z = 0;
@@ -457,7 +453,7 @@ namespace Schach
                 if (bauer.enpassantSchlagenPanel == targetPanel && bauer.passant.enpassant)
                 {
                     Panel panel = spielfeld.schachfeld[bauer.passant.row, bauer.passant.col];
-                    if (panel.Controls.Count > 0 && panel.Controls[0] is Figur figur1)
+                    if (panel.Controls.OfType<Figur>().FirstOrDefault() is Figur figur1)
                     {
                         // PictureBox vom Panel entfernen und freigeben
                         zug.geschlageneFigur = figur1;
@@ -488,8 +484,9 @@ namespace Schach
             //Bauer befoerdern
             if (zug.befoerdert != null)
             {
+                //Der Bauer wird entfernt und die Figur zu der befördert werden soll wird zu der Figur die gezogen wird
                 RemoveFigureFromField(zug, spielfeld);
-                //Schachfeld[zug.row, zug.col].Controls.Add(zug.befoerdert);
+
                 figur = zug.befoerdert;
                 if(zug.befoerdert.weiss)
                 {
@@ -509,6 +506,10 @@ namespace Schach
             {
                 //RemoveFigureFromField entfernt die Figuren auch aus den Listen und speichert die geschlageneFigur
                 RemoveFigureFromField(zug, spielfeld);
+                if(Schachfeld[row, col].Controls.OfType<Figur>().FirstOrDefault() == zug.geschlageneFigur)
+                {
+
+                }
 
             }
             //Das figur null ist, sollte eigentlich nur durch die Deep Copy Felder passieren und wuerde andere Fehler ausloesen
@@ -521,13 +522,15 @@ namespace Schach
             {
                 //Debug
             }
-            if(Schachfeld[row, col].Controls.OfType<Figur>().FirstOrDefault() != null && Schachfeld[row, col].Controls.OfType<Figur>().FirstOrDefault() != figur)
-            {
-                //sollte eigentlich nicht passieren
-            }
+
             spielfeld.schachfeld[row, col].Controls.Add(figur);
 
-            
+            if (Schachfeld[row, col].Controls.OfType<Figur>().FirstOrDefault() != null && spielfeld.schachfeld[row, col].Controls.OfType<Figur>().FirstOrDefault() != figur)
+            {
+                //sollte eigentlich nicht passieren
+                Schachfeld[row, col].Controls.Remove(figur);
+            }
+
             spielfeld.weissAmZug = !spielfeld.weissAmZug;
             if (spielfeld == schachfeld)
             {
@@ -548,7 +551,7 @@ namespace Schach
         {
             Panel panel = schachfeld1.schachfeld[zug.row, zug.col];
 
-            if (panel.Controls.Count > 0 && panel.Controls[0] is Figur figur1 )
+            if (panel.Controls.OfType<Figur>().FirstOrDefault() is Figur figur1 )
             {
                 // PictureBox vom Panel entfernen und freigeben
                 zug.geschlageneFigur = figur1;
@@ -564,6 +567,12 @@ namespace Schach
                     schachfeld1.bewertung += figur1.Wert;
                 }
                 panel.Controls.Remove(figur1);
+
+                if(panel.Controls.Count > 0)
+                {
+                    //Sollte eigentlich nicht passier aber Clear scheint eine effektive Symptom bekämpfung zu sein
+                    panel.Controls.Clear();
+                }
                 //figur1.Dispose();
 
             }
@@ -744,6 +753,7 @@ namespace Schach
                 {
                     MoeglicheZuege.Add(zug);
                 }
+
             }
             return MoeglicheZuege;
         }
@@ -764,6 +774,8 @@ namespace Schach
             {
                 MoeglicheZuege.AddRange(MoeglicheZuegeHinzufuegen(figurenAmZug[i], schachfeld1));
             }
+
+            
             return MoeglicheZuege;
         }
 

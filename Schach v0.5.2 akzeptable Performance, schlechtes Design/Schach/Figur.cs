@@ -126,54 +126,42 @@ namespace Schach
         }
         public List<Zug> ZuegetrotzSchachVerbieten(Schachfeld schachfeld)
         {
-
-            //Schachfeld Schachfeld1 = new Schachfeld(schachfeld);
-            //legale Zuege muss mit dem Original Schachfeld aufgerufen werden, da die Rochade und enpassent Panels auf ein Feld gesetzt werden, dass der legaleZuege Methode uebergeben wird
             List<Zug> legaleZuege = LegaleZuege(schachfeld.schachfeld);
 
-            //Pruefen welche Zuege moeglich sind
-
-            List<Zug> Rzuege = new List<Zug>();
+            List<Zug> zuegeToRemove = new List<Zug>(); // Züge, die entfernt werden sollen
 
             foreach (Zug zug in legaleZuege)
             {
                 int AltRow = row;
                 int AltCol = col;
+
                 bot.ZugMachen(zug, schachfeld);
 
-                //Pruefen ob der Koenig dadurch in ein Schach kommt bzw. in einem bleibt
                 if (KoenigStehtSchach(schachfeld))
                 {
-                    foreach(Zug zug1 in legaleZuege)
-                    {
-                        if (zug.row == zug1.row && zug.col == zug1.col && zug.figur == zug1.figur)
-                        {
-                            Rzuege.Add(zug1);
-                        }
-                        
-                    }
+                    zuegeToRemove.Add(zug);
                 }
+
                 if (zug.Rochade)
                 {
-                    if (!RochadeGeht(schachfeld,zug,AltCol))
+                    if (!RochadeGeht(schachfeld, zug, AltCol))
                     {
-                        foreach (Zug zug1 in legaleZuege)
-                        {
-                            if (zug.row == zug1.row && zug.col == zug1.col && zug.figur == zug1.figur)
-                            {
-                                Rzuege.Add(zug1);
-                            }
-                        }
+                        zuegeToRemove.Add(zug);
                     }
                 }
+
                 bot.ZugRueckgaengigMachen(zug, schachfeld, AltRow, AltCol);
             }
-            foreach (Zug zug in Rzuege)
+
+            // Entferne die Züge, die den König bedrohen oder die Rochade unmöglich machen
+            foreach (Zug zugToRemove in zuegeToRemove)
             {
-                legaleZuege.Remove(zug);
+                legaleZuege.Remove(zugToRemove);
             }
+
             return legaleZuege;
         }
+
 
     }
 }
