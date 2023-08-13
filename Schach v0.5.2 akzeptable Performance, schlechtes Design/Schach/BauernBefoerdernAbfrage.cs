@@ -40,43 +40,75 @@ namespace Schach
 
         private void InitializeComponent()
         {
-            this.Dame = new System.Windows.Forms.Button();
-            this.Laeufer = new System.Windows.Forms.Button();
-            this.Springer = new System.Windows.Forms.Button();
-            this.Turm = new System.Windows.Forms.Button();
+            Dame = new Button();
+            Laeufer = new Button();
+            Springer = new Button();
+            Turm = new Button();
             txtFigurenAuswahl = new TextBox();
-            this.txtFigurenAuswahl.Size = new System.Drawing.Size(200, 40);
+            SuspendLayout();
+            // 
+            // Dame
+            // 
+            Dame.Location = new Point(48, 28);
+            Dame.Name = "Dame";
+            Dame.Size = new Size(75, 23);
+            Dame.TabIndex = 0;
+            Dame.Text = "Dame";
+            Dame.Click += Dame_Click;
+            // 
+            // Laeufer
+            // 
+            Laeufer.Location = new Point(48, 57);
+            Laeufer.Name = "Laeufer";
+            Laeufer.Size = new Size(75, 23);
+            Laeufer.TabIndex = 1;
+            Laeufer.Text = "Laeufer";
+            Laeufer.Click += Laeufer_Click;
+            // 
+            // Springer
+            // 
+            Springer.Location = new Point(48, 86);
+            Springer.Name = "Springer";
+            Springer.Size = new Size(75, 23);
+            Springer.TabIndex = 2;
+            Springer.Text = "Springer";
+            Springer.Click += Springer_Click;
+            // 
+            // Turm
+            // 
+            Turm.Location = new Point(48, 115);
+            Turm.Name = "Turm";
+            Turm.Size = new Size(75, 23);
+            Turm.TabIndex = 3;
+            Turm.Text = "Turm";
+            Turm.Click += Turm_Click;
+            // 
+            // txtFigurenAuswahl
+            // 
+            txtFigurenAuswahl.Location = new Point(0, -1);
+            txtFigurenAuswahl.Name = "txtFigurenAuswahl";
+            txtFigurenAuswahl.Size = new Size(200, 23);
+            txtFigurenAuswahl.TabIndex = 4;
             txtFigurenAuswahl.Text = "Wozu soll befördert werden?";
+            txtFigurenAuswahl.TextChanged += txtFigurenAuswahl_TextChanged;
+            // 
+            // BauerBefoerdernAbfrage
+            // 
+            ClientSize = new Size(202, 158);
+            Controls.Add(Dame);
+            Controls.Add(Laeufer);
+            Controls.Add(Springer);
+            Controls.Add(Turm);
+            Controls.Add(txtFigurenAuswahl);
+            Name = "BauerBefoerdernAbfrage";
             Text = "Bauern befördern";
-            // Konfiguration der Buttons
-            this.Dame.Text = "Dame";
-            this.Dame.Location = new System.Drawing.Point(10, 40);
-            this.Dame.Click += new System.EventHandler(this.Dame_Click);
+            ResumeLayout(false);
+            PerformLayout();
+        }
 
-            this.Laeufer.Text = "Laeufer";
-            this.Laeufer.Location = new System.Drawing.Point(10, 70);
-            this.Laeufer.Click += new System.EventHandler(this.Laeufer_Click);
+        private void txtFigurenAuswahl_TextChanged(object sender, EventArgs e)
+        {
 
-            this.Springer.Text = "Springer";
-            this.Springer.Location = new System.Drawing.Point(10, 100);
-            this.Springer.Click += new System.EventHandler(this.Springer_Click);
-
-            this.Turm.Text = "Turm";
-            this.Turm.Location = new System.Drawing.Point(10, 130);
-            this.Turm.Click += new System.EventHandler(this.Turm_Click);
-
-            // Weitere Komponenten hinzufügen und konfigurieren
-
-            this.SuspendLayout();
-            // Anordnung der Komponenten im Formular
-            this.Controls.Add(Dame);
-            this.Controls.Add(Laeufer);
-            this.Controls.Add(Springer);
-            this.Controls.Add(Turm);
-            this.Controls.Add(txtFigurenAuswahl);
-            this.ResumeLayout(false);
-
-            // Weitere Konfiguration und Initialisierungen hier ...
         }
     }
 }

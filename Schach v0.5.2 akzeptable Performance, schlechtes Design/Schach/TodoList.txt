@@ -1,10 +1,9 @@
 
 
 Bot
-1.1 Es ermöglichen, dass der Bot gegen sich selbst spielt (einen Button um ihn das erste mal ziehen zu lassen)
-2. Performance verbessern (3ms pro Zug zum Figuren Zählen)
-3. Verhindern dass der König vom Bot gedeckte Figuren schlägt, wenn er im Schach steht
-4. Die Bewertung korrigieren (weder Figuren Zaehlen noch die zug.bewertung sind zuverlässig richtig)
+1. Verhindern dass der König vom Bot gedeckte Figuren schlägt, wenn er im Schach steht
+2. Die Bewertung korrigieren (weder Figuren Zaehlen noch die zug.bewertung sind zuverlässig richtig)
+3. Performance verbessern (3ms pro Zug zum Figuren Zählen)
 
 
 Die Test Methode bleibt nach 4sekunden stehen wenn sie beim ZugMachen rekursiv aufgerufen wird (ka warum der StackOverflow nur selten im debugger angezeigt wird)

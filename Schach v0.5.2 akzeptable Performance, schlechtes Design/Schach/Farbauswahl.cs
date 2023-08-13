@@ -40,43 +40,69 @@ namespace Schach
 
         private void InitializeComponent()
         {
-            this.btnWeiss = new System.Windows.Forms.Button();
-            this.btnSchwarz = new System.Windows.Forms.Button();
-            this.btnSpieler = new System.Windows.Forms.Button();
-            this.btnBeide = new System.Windows.Forms.Button();
+            btnWeiss = new Button();
+            btnSchwarz = new Button();
+            btnSpieler = new Button();
+            btnBeide = new Button();
             txtFarbauswahl = new TextBox();
-            this.txtFarbauswahl.Size = new System.Drawing.Size(200, 40);
+            SuspendLayout();
+            // 
+            // btnWeiss
+            // 
+            btnWeiss.Location = new Point(61, 29);
+            btnWeiss.Name = "btnWeiss";
+            btnWeiss.Size = new Size(75, 23);
+            btnWeiss.TabIndex = 0;
+            btnWeiss.Text = "Weiß";
+            btnWeiss.Click += btnWeiss_Click;
+            // 
+            // btnSchwarz
+            // 
+            btnSchwarz.Location = new Point(61, 58);
+            btnSchwarz.Name = "btnSchwarz";
+            btnSchwarz.Size = new Size(75, 23);
+            btnSchwarz.TabIndex = 1;
+            btnSchwarz.Text = "Schwarz";
+            btnSchwarz.Click += btnSchwarz_Click;
+            // 
+            // btnSpieler
+            // 
+            btnSpieler.Location = new Point(61, 87);
+            btnSpieler.Name = "btnSpieler";
+            btnSpieler.Size = new Size(75, 23);
+            btnSpieler.TabIndex = 2;
+            btnSpieler.Text = "Keine";
+            btnSpieler.Click += btnSpieler_Click;
+            // 
+            // btnBeide
+            // 
+            btnBeide.Location = new Point(61, 116);
+            btnBeide.Name = "btnBeide";
+            btnBeide.Size = new Size(75, 23);
+            btnBeide.TabIndex = 3;
+            btnBeide.Text = "Beide";
+            btnBeide.Click += btnBeide_Click;
+            // 
+            // txtFarbauswahl
+            // 
+            txtFarbauswahl.Location = new Point(0, 0);
+            txtFarbauswahl.Name = "txtFarbauswahl";
+            txtFarbauswahl.Size = new Size(200, 23);
+            txtFarbauswahl.TabIndex = 4;
             txtFarbauswahl.Text = "Welche Farbe soll der Bot spielen?";
+            // 
+            // FarbauswahlForm
+            // 
+            ClientSize = new Size(199, 145);
+            Controls.Add(btnWeiss);
+            Controls.Add(btnSchwarz);
+            Controls.Add(btnSpieler);
+            Controls.Add(btnBeide);
+            Controls.Add(txtFarbauswahl);
+            Name = "FarbauswahlForm";
             Text = "Farbauswahl für den Bot";
-            // Konfiguration der Buttons
-            this.btnWeiss.Text = "Weiß";
-            this.btnWeiss.Location = new System.Drawing.Point(10, 40);
-            this.btnWeiss.Click += new System.EventHandler(this.btnWeiss_Click);
-
-            this.btnSchwarz.Text = "Schwarz";
-            this.btnSchwarz.Location = new System.Drawing.Point(10, 70);
-            this.btnSchwarz.Click += new System.EventHandler(this.btnSchwarz_Click);
-
-            this.btnSpieler.Text = "Keine";
-            this.btnSpieler.Location = new System.Drawing.Point(10, 100);
-            this.btnSpieler.Click += new System.EventHandler(this.btnSpieler_Click);
-
-            this.btnBeide.Text = "Beide";
-            this.btnBeide.Location = new System.Drawing.Point(10, 130);
-            this.btnBeide.Click += new System.EventHandler(this.btnBeide_Click);
-
-            // Weitere Komponenten hinzufügen und konfigurieren
-
-            this.SuspendLayout();
-            // Anordnung der Komponenten im Formular
-            this.Controls.Add(btnWeiss);
-            this.Controls.Add(btnSchwarz);
-            this.Controls.Add(btnSpieler);
-            this.Controls.Add(btnBeide);
-            this.Controls.Add(txtFarbauswahl);
-            this.ResumeLayout(false);
-
-            // Weitere Konfiguration und Initialisierungen hier ...
+            ResumeLayout(false);
+            PerformLayout();
         }
     }
 }
