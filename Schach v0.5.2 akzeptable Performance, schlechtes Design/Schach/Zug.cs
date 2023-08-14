@@ -114,7 +114,7 @@ namespace Schach
             {
                 if (SchwarzerKoenig.KoenigStehtSchach(Schachfeld1))
                 {
-                    return bewertung += 100;
+                    return bewertung -= 100;
                 }
                 else
                 {
@@ -159,7 +159,7 @@ namespace Schach
             {
                 if (WeisserKoenig.KoenigStehtSchach(Schachfeld1))
                 {
-                    return bewertung -= 100;
+                    return bewertung += 100;
                 }
                 else
                 {

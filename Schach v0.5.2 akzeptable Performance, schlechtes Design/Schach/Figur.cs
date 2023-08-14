@@ -35,20 +35,38 @@ namespace Schach
 
         public bool KoenigStehtSchach(Schachfeld Schachfeld)
         {
-
-            foreach (Figur figur in Schachfeld.ListDerFiugrenAmZug())
+            if (!weiss)
             {
-                //Pruefen ob der koenig schach steht
-                foreach (Zug zug in figur.LegaleZuege(Schachfeld.schachfeld))
+                foreach (Figur figur in Schachfeld.WeisseFiguren)
                 {
-                    if (Schachfeld.schachfeld[zug.row, zug.col].Controls.OfType<Koenig>().FirstOrDefault() is Koenig koenig)
+                    //Pruefen ob der koenig schach steht
+                    foreach (Zug zug in figur.LegaleZuege(Schachfeld.schachfeld))
                     {
-                        return true;
+                        if (Schachfeld.schachfeld[zug.row, zug.col].Controls.OfType<Koenig>().FirstOrDefault() is Koenig koenig)
+                        {
+                            return true;
+                        }
                     }
                 }
-            }
 
-            return false;
+                return false;
+            }
+            else
+            {
+                foreach (Figur figur in Schachfeld.SchwarzeFiguren)
+                {
+                    //Pruefen ob der koenig schach steht
+                    foreach (Zug zug in figur.LegaleZuege(Schachfeld.schachfeld))
+                    {
+                        if (Schachfeld.schachfeld[zug.row, zug.col].Controls.OfType<Koenig>().FirstOrDefault() is Koenig koenig)
+                        {
+                            return true;
+                        }
+                    }
+                }
+
+                return false;
+            }
         }
         public bool RochadeGeht(Schachfeld Schachfeld, Zug zug, int AltCol)
         {

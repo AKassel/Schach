@@ -115,17 +115,17 @@ namespace Schach
         {
             
              await Task.Run(() => BessererZug(schachfeld, tiefe));
-            
+            await Task.Delay(10);
         }
 
         async public Task AlleinSpielenAsync()
         {
             await BessererZugAsync(schachfeld, 3);
-            //weiss = !weiss;
+            weiss = schachfeld.weissAmZug;
             // Code, der die Oberfläche aktualisiert, kann hier ausgeführt werden
 
             // Optional: Führe 'AlleinSpielenAsync()' erneut nach einer Verzögerung aus
-            await Task.Delay(TimeSpan.FromSeconds(1));
+            await Task.Delay(10);
             await AlleinSpielenAsync();
         }
 
@@ -260,11 +260,11 @@ namespace Schach
                         {
                             if (zug.figur.weiss)
                             {
-                                zug.bewertung -= 100;
+                                zug.bewertung += 100;
                             }
                             else
                             {
-                                zug.bewertung += 100;
+                                zug.bewertung -= 100;
                             }
                         }
                         else
@@ -515,6 +515,7 @@ namespace Schach
             //Bauer befoerdern
             if (zug.befoerdert != null)
             {
+                await Task.Delay(10);
                 //Der Bauer wird entfernt und die Figur zu der befördert werden soll wird zu der Figur die gezogen wird
                 RemoveFigureFromField(zug, spielfeld);
 
@@ -529,6 +530,7 @@ namespace Schach
                     spielfeld.WeisseFiguren.Add(zug.befoerdert);
                     spielfeld.bewertung -= zug.befoerdert.Wert;
                 }
+                
             }
             //Das eigentliche Zug machen
 
