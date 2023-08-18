@@ -4,6 +4,6 @@ Bot
 1. Verhindern dass der König vom Bot gedeckte Figuren schlägt, wenn er im Schach steht
 2. Die Bewertung korrigieren (weder Figuren Zaehlen noch die zug.bewertung sind zuverlässig richtig)
 3. Performance verbessern (3ms pro Zug zum Figuren Zählen)
-
+4. Der Bot kann (zumindest wenn er gegen sich selbst spielt) keine Bauern befördern und der Turm wird bei der Rochade nicht mitgezogen (kann sein dass der Bot auch nicht enpassant schlagen kann, ist halt schwer zu testen)
 
 Die Test Methode bleibt nach 4sekunden stehen wenn sie beim ZugMachen rekursiv aufgerufen wird (ka warum der StackOverflow nur selten im debugger angezeigt wird)
