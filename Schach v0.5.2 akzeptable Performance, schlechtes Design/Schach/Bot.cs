@@ -35,15 +35,18 @@ namespace Schach
             this.sollZiehen = sollZiehen;
             this.weiss = weiss;
             this.schachfeld = schachfeld;
-            weisseDame = Image.FromFile(@"D:\Arne\Schach Programm\Bilder\Dame.png");
-            weisserLaeufer = Image.FromFile(@"D:\Arne\Schach Programm\Bilder\Laeufer.png");
-            weisserSpringer = Image.FromFile(@"D:\Arne\Schach Programm\Bilder\Springer.png");
-            weisserTurm = Image.FromFile(@"D:\Arne\Schach Programm\Bilder\Turm.png");
+            string basePath = AppDomain.CurrentDomain.BaseDirectory;
+            string imagesPath = Path.Combine(basePath, "..", "..", "..", "..", "..", "Bilder");
 
-            schwarzeDame = Image.FromFile(@"D:\Arne\Schach Programm\Bilder\SDame.png");
-            schwarzerLaeufer = Image.FromFile(@"D:\Arne\Schach Programm\Bilder\SLaeufer.png");
-            schwarzerSpringer = Image.FromFile(@"D:\Arne\Schach Programm\Bilder\SSpringer.png");
-            schwarzerTurm = Image.FromFile(@"D:\Arne\Schach Programm\Bilder\STurm.png");
+            weisseDame = Image.FromFile(Path.Combine(imagesPath, "Dame.png"));
+            weisserLaeufer = Image.FromFile(Path.Combine(imagesPath, "Laeufer.png"));
+            weisserSpringer = Image.FromFile(Path.Combine(imagesPath, "Springer.png"));
+            weisserTurm = Image.FromFile(Path.Combine(imagesPath, "Turm.png"));
+
+            schwarzeDame = Image.FromFile(Path.Combine(imagesPath, "SDame.png"));
+            schwarzerLaeufer = Image.FromFile(Path.Combine(imagesPath, "SLaeufer.png"));
+            schwarzerSpringer = Image.FromFile(Path.Combine(imagesPath, "SSpringer.png"));
+            schwarzerTurm = Image.FromFile(Path.Combine(imagesPath, "STurm.png"));
 
         }
         public Bot()

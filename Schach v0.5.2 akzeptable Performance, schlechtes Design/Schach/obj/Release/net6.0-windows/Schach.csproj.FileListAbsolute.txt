@@ -17,3 +17,22 @@ D:\Arne\Schach Programm\Git version\Schach\Schach v0.5.2 akzeptable Performance,
 D:\Arne\Schach Programm\Git version\Schach\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\obj\Release\net6.0-windows\Schach.pdb
 D:\Arne\Schach Programm\Git version\Schach\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\obj\Release\net6.0-windows\Schach.genruntimeconfig.cache
 D:\Arne\Schach Programm\Git version\Schach\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\obj\Release\net6.0-windows\ref\Schach.dll
+C:\Arne\Neuer Ordner\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\bin\Release\net6.0-windows\Schach.exe
+C:\Arne\Neuer Ordner\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\bin\Release\net6.0-windows\Schach.deps.json
+C:\Arne\Neuer Ordner\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\bin\Release\net6.0-windows\Schach.runtimeconfig.json
+C:\Arne\Neuer Ordner\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\bin\Release\net6.0-windows\Schach.dll
+C:\Arne\Neuer Ordner\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\bin\Release\net6.0-windows\Schach.pdb
+C:\Arne\Neuer Ordner\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\obj\Release\net6.0-windows\Schach.csproj.AssemblyReference.cache
+C:\Arne\Neuer Ordner\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\obj\Release\net6.0-windows\Schach.BauerBefoerdernAbfrage.resources
+C:\Arne\Neuer Ordner\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\obj\Release\net6.0-windows\Schach.FarbauswahlForm.resources
+C:\Arne\Neuer Ordner\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\obj\Release\net6.0-windows\Schach.Schach.resources
+C:\Arne\Neuer Ordner\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\obj\Release\net6.0-windows\Schach.csproj.GenerateResource.cache
+C:\Arne\Neuer Ordner\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\obj\Release\net6.0-windows\Schach.GeneratedMSBuildEditorConfig.editorconfig
+C:\Arne\Neuer Ordner\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\obj\Release\net6.0-windows\Schach.AssemblyInfoInputs.cache
+C:\Arne\Neuer Ordner\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\obj\Release\net6.0-windows\Schach.AssemblyInfo.cs
+C:\Arne\Neuer Ordner\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\obj\Release\net6.0-windows\Schach.csproj.CoreCompileInputs.cache
+C:\Arne\Neuer Ordner\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\obj\Release\net6.0-windows\Schach.dll
+C:\Arne\Neuer Ordner\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\obj\Release\net6.0-windows\refint\Schach.dll
+C:\Arne\Neuer Ordner\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\obj\Release\net6.0-windows\Schach.pdb
+C:\Arne\Neuer Ordner\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\obj\Release\net6.0-windows\Schach.genruntimeconfig.cache
+C:\Arne\Neuer Ordner\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\obj\Release\net6.0-windows\ref\Schach.dll
