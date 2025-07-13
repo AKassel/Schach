@@ -228,3 +228,22 @@ D:\Arne\Schach Programm\Git version\Schach\Schach v0.5.2 akzeptable Performance,
 D:\Arne\Schach Programm\Git version\Schach\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\obj\Debug\net6.0-windows\ref\Schach.dll
 D:\Arne\Schach Programm\Git version\Schach\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\obj\Debug\net6.0-windows\Schach.BauerBefoerdernAbfrage.resources
 D:\Arne\Schach Programm\Git version\Schach\Schach v0.5.2 akzeptable Performance, schlechtes Design\Schach\obj\Debug\net6.0-windows\Schach.FarbauswahlForm.resources
+D:\Arne\Schach Programm\Git version\Schach\Schach v0.5.3.2024\Schach\bin\Debug\net6.0-windows\Schach.exe
+D:\Arne\Schach Programm\Git version\Schach\Schach v0.5.3.2024\Schach\bin\Debug\net6.0-windows\Schach.deps.json
+D:\Arne\Schach Programm\Git version\Schach\Schach v0.5.3.2024\Schach\bin\Debug\net6.0-windows\Schach.runtimeconfig.json
+D:\Arne\Schach Programm\Git version\Schach\Schach v0.5.3.2024\Schach\bin\Debug\net6.0-windows\Schach.dll
+D:\Arne\Schach Programm\Git version\Schach\Schach v0.5.3.2024\Schach\bin\Debug\net6.0-windows\Schach.pdb
+D:\Arne\Schach Programm\Git version\Schach\Schach v0.5.3.2024\Schach\obj\Debug\net6.0-windows\Schach.BauerBefoerdernAbfrage.resources
+D:\Arne\Schach Programm\Git version\Schach\Schach v0.5.3.2024\Schach\obj\Debug\net6.0-windows\Schach.FarbauswahlForm.resources
+D:\Arne\Schach Programm\Git version\Schach\Schach v0.5.3.2024\Schach\obj\Debug\net6.0-windows\Schach.Schach.resources
+D:\Arne\Schach Programm\Git version\Schach\Schach v0.5.3.2024\Schach\obj\Debug\net6.0-windows\Schach.csproj.GenerateResource.cache
+D:\Arne\Schach Programm\Git version\Schach\Schach v0.5.3.2024\Schach\obj\Debug\net6.0-windows\Schach.GeneratedMSBuildEditorConfig.editorconfig
+D:\Arne\Schach Programm\Git version\Schach\Schach v0.5.3.2024\Schach\obj\Debug\net6.0-windows\Schach.AssemblyInfoInputs.cache
+D:\Arne\Schach Programm\Git version\Schach\Schach v0.5.3.2024\Schach\obj\Debug\net6.0-windows\Schach.AssemblyInfo.cs
+D:\Arne\Schach Programm\Git version\Schach\Schach v0.5.3.2024\Schach\obj\Debug\net6.0-windows\Schach.csproj.CoreCompileInputs.cache
+D:\Arne\Schach Programm\Git version\Schach\Schach v0.5.3.2024\Schach\obj\Debug\net6.0-windows\Schach.dll
+D:\Arne\Schach Programm\Git version\Schach\Schach v0.5.3.2024\Schach\obj\Debug\net6.0-windows\refint\Schach.dll
+D:\Arne\Schach Programm\Git version\Schach\Schach v0.5.3.2024\Schach\obj\Debug\net6.0-windows\Schach.pdb
+D:\Arne\Schach Programm\Git version\Schach\Schach v0.5.3.2024\Schach\obj\Debug\net6.0-windows\Schach.genruntimeconfig.cache
+D:\Arne\Schach Programm\Git version\Schach\Schach v0.5.3.2024\Schach\obj\Debug\net6.0-windows\ref\Schach.dll
+D:\Arne\Schach Programm\Git version\Schach\Schach v0.5.3.2024\Schach\obj\Debug\net6.0-windows\Schach.sourcelink.json

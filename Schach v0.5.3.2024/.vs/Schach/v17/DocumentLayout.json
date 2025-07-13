@@ -1,0 +1,283 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Arne\\Schach Programm\\Git version\\Schach\\Schach v0.5.3.2024\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6BDA9A13-B0A0-4AEB-A5C0-3EC0F9432E20}|Schach\\Schach.csproj|d:\\arne\\schach programm\\git version\\schach\\schach v0.5.3.2024\\schach\\figur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BDA9A13-B0A0-4AEB-A5C0-3EC0F9432E20}|Schach\\Schach.csproj|solutionrelative:schach\\figur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BDA9A13-B0A0-4AEB-A5C0-3EC0F9432E20}|Schach\\Schach.csproj|d:\\arne\\schach programm\\git version\\schach\\schach v0.5.3.2024\\schach\\bot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BDA9A13-B0A0-4AEB-A5C0-3EC0F9432E20}|Schach\\Schach.csproj|solutionrelative:schach\\bot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BDA9A13-B0A0-4AEB-A5C0-3EC0F9432E20}|Schach\\Schach.csproj|d:\\arne\\schach programm\\git version\\schach\\schach v0.5.3.2024\\schach\\todolist.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{6BDA9A13-B0A0-4AEB-A5C0-3EC0F9432E20}|Schach\\Schach.csproj|solutionrelative:schach\\todolist.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BDA9A13-B0A0-4AEB-A5C0-3EC0F9432E20}|Schach\\Schach.csproj|d:\\arne\\schach programm\\git version\\schach\\schach v0.5.3.2024\\schach\\schach.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BDA9A13-B0A0-4AEB-A5C0-3EC0F9432E20}|Schach\\Schach.csproj|solutionrelative:schach\\schach.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BDA9A13-B0A0-4AEB-A5C0-3EC0F9432E20}|Schach\\Schach.csproj|d:\\arne\\schach programm\\git version\\schach\\schach v0.5.3.2024\\schach\\schach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BDA9A13-B0A0-4AEB-A5C0-3EC0F9432E20}|Schach\\Schach.csproj|solutionrelative:schach\\schach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BDA9A13-B0A0-4AEB-A5C0-3EC0F9432E20}|Schach\\Schach.csproj|d:\\arne\\schach programm\\git version\\schach\\schach v0.5.3.2024\\schach\\schachfeld.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BDA9A13-B0A0-4AEB-A5C0-3EC0F9432E20}|Schach\\Schach.csproj|solutionrelative:schach\\schachfeld.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BDA9A13-B0A0-4AEB-A5C0-3EC0F9432E20}|Schach\\Schach.csproj|d:\\arne\\schach programm\\git version\\schach\\schach v0.5.3.2024\\schach\\farbauswahl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BDA9A13-B0A0-4AEB-A5C0-3EC0F9432E20}|Schach\\Schach.csproj|solutionrelative:schach\\farbauswahl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BDA9A13-B0A0-4AEB-A5C0-3EC0F9432E20}|Schach\\Schach.csproj|d:\\arne\\schach programm\\git version\\schach\\schach v0.5.3.2024\\schach\\laeufer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BDA9A13-B0A0-4AEB-A5C0-3EC0F9432E20}|Schach\\Schach.csproj|solutionrelative:schach\\laeufer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BDA9A13-B0A0-4AEB-A5C0-3EC0F9432E20}|Schach\\Schach.csproj|d:\\arne\\schach programm\\git version\\schach\\schach v0.5.3.2024\\schach\\bauer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BDA9A13-B0A0-4AEB-A5C0-3EC0F9432E20}|Schach\\Schach.csproj|solutionrelative:schach\\bauer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BDA9A13-B0A0-4AEB-A5C0-3EC0F9432E20}|Schach\\Schach.csproj|d:\\arne\\schach programm\\git version\\schach\\schach v0.5.3.2024\\schach\\bauernbefoerdernabfrage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BDA9A13-B0A0-4AEB-A5C0-3EC0F9432E20}|Schach\\Schach.csproj|solutionrelative:schach\\bauernbefoerdernabfrage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BDA9A13-B0A0-4AEB-A5C0-3EC0F9432E20}|Schach\\Schach.csproj|d:\\arne\\schach programm\\git version\\schach\\schach v0.5.3.2024\\schach\\koenig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BDA9A13-B0A0-4AEB-A5C0-3EC0F9432E20}|Schach\\Schach.csproj|solutionrelative:schach\\koenig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BDA9A13-B0A0-4AEB-A5C0-3EC0F9432E20}|Schach\\Schach.csproj|d:\\arne\\schach programm\\git version\\schach\\schach v0.5.3.2024\\schach\\turm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BDA9A13-B0A0-4AEB-A5C0-3EC0F9432E20}|Schach\\Schach.csproj|solutionrelative:schach\\turm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BDA9A13-B0A0-4AEB-A5C0-3EC0F9432E20}|Schach\\Schach.csproj|d:\\arne\\schach programm\\git version\\schach\\schach v0.5.3.2024\\schach\\springer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BDA9A13-B0A0-4AEB-A5C0-3EC0F9432E20}|Schach\\Schach.csproj|solutionrelative:schach\\springer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BDA9A13-B0A0-4AEB-A5C0-3EC0F9432E20}|Schach\\Schach.csproj|d:\\arne\\schach programm\\git version\\schach\\schach v0.5.3.2024\\schach\\dame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BDA9A13-B0A0-4AEB-A5C0-3EC0F9432E20}|Schach\\Schach.csproj|solutionrelative:schach\\dame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 16,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TodoList.txt",
+              "DocumentMoniker": "D:\\Arne\\Schach Programm\\Git version\\Schach\\Schach v0.5.3.2024\\Schach\\TodoList.txt",
+              "RelativeDocumentMoniker": "Schach\\TodoList.txt",
+              "ToolTip": "D:\\Arne\\Schach Programm\\Git version\\Schach\\Schach v0.5.3.2024\\Schach\\TodoList.txt",
+              "RelativeToolTip": "Schach\\TodoList.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-08-30T19:08:15.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Bot.cs",
+              "DocumentMoniker": "D:\\Arne\\Schach Programm\\Git version\\Schach\\Schach v0.5.3.2024\\Schach\\Bot.cs",
+              "RelativeDocumentMoniker": "Schach\\Bot.cs",
+              "ToolTip": "D:\\Arne\\Schach Programm\\Git version\\Schach\\Schach v0.5.3.2024\\Schach\\Bot.cs",
+              "RelativeToolTip": "Schach\\Bot.cs",
+              "ViewState": "AgIAAEoCAAAAAAAAAAAAAEoCAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T19:08:15.721Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Laeufer.cs",
+              "DocumentMoniker": "D:\\Arne\\Schach Programm\\Git version\\Schach\\Schach v0.5.3.2024\\Schach\\Laeufer.cs",
+              "RelativeDocumentMoniker": "Schach\\Laeufer.cs",
+              "ToolTip": "D:\\Arne\\Schach Programm\\Git version\\Schach\\Schach v0.5.3.2024\\Schach\\Laeufer.cs",
+              "RelativeToolTip": "Schach\\Laeufer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T19:08:15.498Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Schachfeld.cs",
+              "DocumentMoniker": "D:\\Arne\\Schach Programm\\Git version\\Schach\\Schach v0.5.3.2024\\Schach\\Schachfeld.cs",
+              "RelativeDocumentMoniker": "Schach\\Schachfeld.cs",
+              "ToolTip": "D:\\Arne\\Schach Programm\\Git version\\Schach\\Schach v0.5.3.2024\\Schach\\Schachfeld.cs",
+              "RelativeToolTip": "Schach\\Schachfeld.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T19:08:15.5Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Turm.cs",
+              "DocumentMoniker": "D:\\Arne\\Schach Programm\\Git version\\Schach\\Schach v0.5.3.2024\\Schach\\Turm.cs",
+              "RelativeDocumentMoniker": "Schach\\Turm.cs",
+              "ToolTip": "D:\\Arne\\Schach Programm\\Git version\\Schach\\Schach v0.5.3.2024\\Schach\\Turm.cs",
+              "RelativeToolTip": "Schach\\Turm.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAwwE4AAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T19:08:15.502Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Farbauswahl.cs",
+              "DocumentMoniker": "D:\\Arne\\Schach Programm\\Git version\\Schach\\Schach v0.5.3.2024\\Schach\\Farbauswahl.cs",
+              "RelativeDocumentMoniker": "Schach\\Farbauswahl.cs",
+              "ToolTip": "D:\\Arne\\Schach Programm\\Git version\\Schach\\Schach v0.5.3.2024\\Schach\\Farbauswahl.cs",
+              "RelativeToolTip": "Schach\\Farbauswahl.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAawB8AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T19:08:15.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Schach.Designer.cs",
+              "DocumentMoniker": "D:\\Arne\\Schach Programm\\Git version\\Schach\\Schach v0.5.3.2024\\Schach\\Schach.Designer.cs",
+              "RelativeDocumentMoniker": "Schach\\Schach.Designer.cs",
+              "ToolTip": "D:\\Arne\\Schach Programm\\Git version\\Schach\\Schach v0.5.3.2024\\Schach\\Schach.Designer.cs",
+              "RelativeToolTip": "Schach\\Schach.Designer.cs",
+              "ViewState": "AgIAABwBAAAAAAAAAAAAwKwAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T19:08:15.508Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Schach.cs",
+              "DocumentMoniker": "D:\\Arne\\Schach Programm\\Git version\\Schach\\Schach v0.5.3.2024\\Schach\\Schach.cs",
+              "RelativeDocumentMoniker": "Schach\\Schach.cs",
+              "ToolTip": "D:\\Arne\\Schach Programm\\Git version\\Schach\\Schach v0.5.3.2024\\Schach\\Schach.cs",
+              "RelativeToolTip": "Schach\\Schach.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T19:08:15.508Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Figur.cs",
+              "DocumentMoniker": "D:\\Arne\\Schach Programm\\Git version\\Schach\\Schach v0.5.3.2024\\Schach\\Figur.cs",
+              "RelativeDocumentMoniker": "Schach\\Figur.cs",
+              "ToolTip": "D:\\Arne\\Schach Programm\\Git version\\Schach\\Schach v0.5.3.2024\\Schach\\Figur.cs",
+              "RelativeToolTip": "Schach\\Figur.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAA0wC0AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T19:08:16.017Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Bauer.cs",
+              "DocumentMoniker": "D:\\Arne\\Schach Programm\\Git version\\Schach\\Schach v0.5.3.2024\\Schach\\Bauer.cs",
+              "RelativeDocumentMoniker": "Schach\\Bauer.cs",
+              "ToolTip": "D:\\Arne\\Schach Programm\\Git version\\Schach\\Schach v0.5.3.2024\\Schach\\Bauer.cs",
+              "RelativeToolTip": "Schach\\Bauer.cs",
+              "ViewState": "AQIAAGcAAAAAAAAAAAAYwG8AAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T19:08:16.019Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Springer.cs",
+              "DocumentMoniker": "D:\\Arne\\Schach Programm\\Git version\\Schach\\Schach v0.5.3.2024\\Schach\\Springer.cs",
+              "RelativeDocumentMoniker": "Schach\\Springer.cs",
+              "ToolTip": "D:\\Arne\\Schach Programm\\Git version\\Schach\\Schach v0.5.3.2024\\Schach\\Springer.cs",
+              "RelativeToolTip": "Schach\\Springer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T19:08:16.021Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "BauernBefoerdernAbfrage.cs",
+              "DocumentMoniker": "D:\\Arne\\Schach Programm\\Git version\\Schach\\Schach v0.5.3.2024\\Schach\\BauernBefoerdernAbfrage.cs",
+              "RelativeDocumentMoniker": "Schach\\BauernBefoerdernAbfrage.cs",
+              "ToolTip": "D:\\Arne\\Schach Programm\\Git version\\Schach\\Schach v0.5.3.2024\\Schach\\BauernBefoerdernAbfrage.cs",
+              "RelativeToolTip": "Schach\\BauernBefoerdernAbfrage.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T19:08:16.023Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Koenig.cs",
+              "DocumentMoniker": "D:\\Arne\\Schach Programm\\Git version\\Schach\\Schach v0.5.3.2024\\Schach\\Koenig.cs",
+              "RelativeDocumentMoniker": "Schach\\Koenig.cs",
+              "ToolTip": "D:\\Arne\\Schach Programm\\Git version\\Schach\\Schach v0.5.3.2024\\Schach\\Koenig.cs",
+              "RelativeToolTip": "Schach\\Koenig.cs",
+              "ViewState": "AQIAAI8AAAAAAAAAAAAwwIEAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T19:08:16.024Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Dame.cs",
+              "DocumentMoniker": "D:\\Arne\\Schach Programm\\Git version\\Schach\\Schach v0.5.3.2024\\Schach\\Dame.cs",
+              "RelativeDocumentMoniker": "Schach\\Dame.cs",
+              "ToolTip": "D:\\Arne\\Schach Programm\\Git version\\Schach\\Schach v0.5.3.2024\\Schach\\Dame.cs",
+              "RelativeToolTip": "Schach\\Dame.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T19:08:16.026Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

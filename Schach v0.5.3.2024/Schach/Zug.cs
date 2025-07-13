@@ -19,6 +19,8 @@ namespace Schach
         public Figur geschlageneFigur;
         public bool FigurWurdeSchonVorherGezogen;
         public bool Rochade = false;
+        public bool befoerdertFigur =false;
+
         public Zug(Figur figur, int row, int col)
         {
 
@@ -40,6 +42,9 @@ namespace Schach
             this.figur = figur;
             this.row = row;
             this.col = col;
+            befoerdertFigur = true;
+            befoerdert.SizeMode = PictureBoxSizeMode.StretchImage;
+            befoerdert.Dock = DockStyle.Fill;
         }
         public int Bewertung()
         {

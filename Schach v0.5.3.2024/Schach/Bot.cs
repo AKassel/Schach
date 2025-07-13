@@ -1,14 +1,6 @@
-﻿using Microsoft.VisualBasic;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
+﻿using System;
 using System.Diagnostics;
-using System.Linq;
-using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Windows.Forms.Design.Behavior;
+using System.Reflection.PortableExecutable;
 
 namespace Schach
 {
@@ -48,6 +40,8 @@ namespace Schach
             schwarzerSpringer = Image.FromFile(Path.Combine(imagesPath, "SSpringer.png"));
             schwarzerTurm = Image.FromFile(Path.Combine(imagesPath, "STurm.png"));
 
+            
+
         }
         public Bot()
         {
@@ -62,8 +56,8 @@ namespace Schach
                 Stopwatch stopwatch = Stopwatch.StartNew();
                 int Test = MoeglicheZuegeTest(1, schachfeldKopie);
                 stopwatch.Stop();
-                Debug.WriteLine(stopwatch.ElapsedMilliseconds + "ms R1: " +Test);
-                
+                Debug.WriteLine(stopwatch.ElapsedMilliseconds + "ms R1: " + Test);
+
                 Schachfeld schachfeldKopie1 = new Schachfeld(schachfeld);
                 Stopwatch stopwatch1 = Stopwatch.StartNew();
                 int Test1 = MoeglicheZuegeTest(2, schachfeldKopie1);
@@ -100,24 +94,27 @@ namespace Schach
             {
                 if (sollZiehen)
                 {
+
                     BessererZug(schachfeld, 3);
+                    //ZufallsZug(schachfeld);
+                    //SchlechterZug(schachfeld);
                 }
                 if (!sollZiehen && (weiss || alleinSpielen))
                 {
                     AlleinSpielenAsync();
-                    
+
                 }
             }
-           //SchlechterZug(schachfeld);
-           //ZufallsZug(schachfeld);
+            //SchlechterZug(schachfeld);
+            //ZufallsZug(schachfeld);
 
 
 
         }
         async public Task BessererZugAsync(Schachfeld schachfeld, int tiefe)
         {
-            
-             await Task.Run(() => BessererZug(schachfeld, tiefe));
+
+            await Task.Run(() => BessererZug(schachfeld, tiefe));
             await Task.Delay(10);
         }
 
@@ -169,13 +166,13 @@ namespace Schach
             }
             else
             {
-                foreach(Zug zug in zuege)
+                foreach (Zug zug in zuege)
                 {
                     int AltRow = zug.figur.row;
                     int AltCol = zug.figur.col;
                     ZugMachen(zug, schachfeldOrg);
 
-                     Positionen += MoeglicheZuegeTest(Tiefe - 1, schachfeldOrg);
+                    Positionen += MoeglicheZuegeTest(Tiefe - 1, schachfeldOrg);
 
                     ZugRueckgaengigMachen(zug, schachfeldOrg, AltRow, AltCol);
                 }
@@ -204,7 +201,7 @@ namespace Schach
             }
             return Positionen;
         }
-        
+
         public List<Zug> FolgeZuegeHinzufuegen(int Tiefe, List<Zug> zuege, Schachfeld schachfeld1)
         {
             if (Tiefe == 1)
@@ -242,8 +239,8 @@ namespace Schach
                     ZugMachen(zug, Kopie);
                     zug.folgeZuege = FolgeZuegeHinzufuegen(Tiefe - 1, MoeglicheZuegeFuerWeissOderSchwarzSuchen(Kopie), Kopie);
                     ZugRueckgaengigMachen(zug, Kopie, AltRow, AltCol);
-                    
-                    
+
+
                 });
             }
             else
@@ -276,7 +273,7 @@ namespace Schach
                         }
                     }
                 }
-               
+
             }
             return zuege;
         }
@@ -307,7 +304,8 @@ namespace Schach
                                     {
                                         if (vierterrekursionszug.folgeZuege.Count != 0)
                                         {
-                                            foreach (Zug fuenfterrekursionszug in vierterrekursionszug.folgeZuege) {
+                                            foreach (Zug fuenfterrekursionszug in vierterrekursionszug.folgeZuege)
+                                            {
 
                                                 z++;
                                             }
@@ -347,17 +345,21 @@ namespace Schach
                 ZufallsZug.figur = ZufallsZug.figur.original;
                 // Verarbeite den ZufallsZug
             }
-            else
+            else if (Schachfeld.SchwarzeFiguren.FirstOrDefault().KoenigStehtSchach(Schachfeld) && Mz.Count ==0)
             {
                 // Zeige eine Benachrichtigung an, dass der Spieler gewonnen hat
-                MessageBox.Show("Herzlichen Glückwunsch! Du hast gewonnen!", "Spielende");
+                MessageBox.Show("Herzlichen Glückwunsch! Du hast gewonnen!", "Schachmatt");
+                return;
+            } else
+            {
+                MessageBox.Show("Das Spiel ist unentschieden", "Patt");
                 return;
             }
             Zug besterZug;
 
             foreach (Zug zug in Mz)
             {
-                 zug.bewertung = zug.Bewertung();
+                zug.bewertung = zug.Bewertung();
             }
             if (!weiss)
             {
@@ -380,14 +382,14 @@ namespace Schach
                 }
                 besterZug.figur = besterZug.figur.original;
 
-                
-                 ZugMachen(besterZug, Schachfeld1);
-                
+
+                ZugMachen(besterZug, Schachfeld1);
+
             }
-            
-                
-            
-            
+
+
+
+
         }
 
         public async void ZugMachen(Zug zug, Schachfeld spielfeld)
@@ -400,7 +402,7 @@ namespace Schach
             Figur figur = zug.figur;
             Panel targetPanel = Schachfeld[row, col];
 
-            //Rochade scheiss Anfang
+            //Rochade Anfang
             //Beim ersten Koenigszug oder Turmzug wird bewegt auf true gesetzt, solange bewegt auf false ist, kann LegaleZuege()
             //Die Rochade als Legal zurueck geben
 
@@ -438,14 +440,15 @@ namespace Schach
             }
             if (figur is Turm turm)
             {
-                if (!turm.Bewegt) {
+                if (!turm.Bewegt)
+                {
                     zug.FigurWurdeSchonVorherGezogen = false;
                 }
                 turm.Bewegt = true;
             }
-            //Rochade scheiss Ende
+            //Rochade Ende
 
-            //Enpassant scheiss Anfang
+            //EnpassantAnfang
 
             //spielfeld.vorherigerEnpassantBauer = spielfeld.enpassantBauer;
             if (spielfeld.enpassantBauer != null)
@@ -490,7 +493,7 @@ namespace Schach
                     {
                         // PictureBox vom Panel entfernen und freigeben
                         zug.geschlageneFigur = figur1;
-                        if(zug.geschlageneFigur  == null)
+                        if (zug.geschlageneFigur == null)
                         {
 
                         }
@@ -512,7 +515,7 @@ namespace Schach
                 }
             }
 
-            //Enpassant scheiss Ende
+            //Enpassant Ende
 
             //Bauer befoerdern
             if (zug.befoerdert != null)
@@ -528,7 +531,7 @@ namespace Schach
                 zug.col = tempc;
 
                 figur = zug.befoerdert;
-                if(zug.befoerdert.weiss)
+                if (zug.befoerdert.weiss)
                 {
                     spielfeld.WeisseFiguren.Add(zug.befoerdert);
                     spielfeld.bewertung += zug.befoerdert.Wert;
@@ -538,16 +541,16 @@ namespace Schach
                     spielfeld.WeisseFiguren.Add(zug.befoerdert);
                     spielfeld.bewertung -= zug.befoerdert.Wert;
                 }
-                
+
             }
             //Das eigentliche Zug machen
-
-            //Entferne ggf. vorhandene Figuren auf dem Feld, die auf das gezogen werden soll
+            
+            //Entferne ggf. vorhandene Figuren auf dem Feld, auf das gezogen werden soll
             if (Schachfeld[row, col].Controls.OfType<Figur>().FirstOrDefault() != null && Schachfeld[row, col].Controls.OfType<Figur>().FirstOrDefault() != figur)
             {
                 //RemoveFigureFromField entfernt die Figuren auch aus den Listen und speichert die geschlageneFigur
                 RemoveFigureFromField(zug, spielfeld);
-                if (spielfeld.schachfeld[zug.row,zug.col].Controls.Count != 0)
+                if (spielfeld.schachfeld[zug.row, zug.col].Controls.Count != 0)
                 {
                     spielfeld.schachfeld[zug.row, zug.col].Controls.Clear();
                 }
@@ -563,6 +566,7 @@ namespace Schach
                 //Debug
             }
 
+            
             spielfeld.schachfeld[row, col].Controls.Add(figur);
 
             if (Schachfeld[row, col].Controls.OfType<Figur>().FirstOrDefault() != null && spielfeld.schachfeld[row, col].Controls.OfType<Figur>().FirstOrDefault() != figur)
@@ -572,9 +576,39 @@ namespace Schach
             }
 
             spielfeld.weissAmZug = !spielfeld.weissAmZug;
+
+            
+               
+            
             if (spielfeld == schachfeld)
             {
+                Schachfeld schachfeld1 = new Schachfeld(schachfeld);
+                List<Zug> Mz = MoeglicheZuegeFuerWeissOderSchwarzSuchen(schachfeld1);
+                if (Mz.Count == 0)
+                {
+                    if (spielfeld.weissAmZug)
+                    {
+                        if (schachfeld.WeisseFiguren.FirstOrDefault().KoenigStehtSchach(schachfeld1))
+                        {
+                            // Zeige eine Benachrichtigung an, dass der Spieler verloren hat
+                            MessageBox.Show("Schwarz hat gewonnen!", "Schachmatt");
+                            return;
+                        }
 
+                    } else if (!spielfeld.weissAmZug)
+                    {
+                        if (schachfeld.SchwarzeFiguren.FirstOrDefault().KoenigStehtSchach(schachfeld1))
+                        {
+                            // Zeige eine Benachrichtigung an, dass der Spieler verloren hat
+                            MessageBox.Show("Weiss hat gewonnen!", "Schachmatt");
+                            return;
+                        }
+                    }
+                        MessageBox.Show("Das Spiel ist unentschieden", "Patt");
+                        return;
+                    
+                }
+                
                 if (schachfeld.weissAmZug == weiss)
                 {
                     if (!Test)
@@ -590,11 +624,11 @@ namespace Schach
         {
             Panel panel = schachfeld1.schachfeld[zug.row, zug.col];
 
-            if (panel.Controls.OfType<Figur>().FirstOrDefault() is Figur figur1 )
+            if (panel.Controls.OfType<Figur>().FirstOrDefault() is Figur figur1)
             {
                 // PictureBox vom Panel entfernen und freigeben
                 zug.geschlageneFigur = figur1;
-                
+
                 if (figur1.weiss)
                 {
                     schachfeld1.WeisseFiguren.Remove(figur1);
@@ -607,7 +641,7 @@ namespace Schach
                 }
                 panel.Controls.Remove(figur1);
 
-                if(panel.Controls.Count > 0)
+                if (panel.Controls.Count > 0)
                 {
                     //Sollte eigentlich nicht passieren aber Clear scheint eine effektive Symptom bekämpfung zu sein
                     panel.Controls.Clear();
@@ -630,7 +664,7 @@ namespace Schach
             {
                 //sollte eigentlich nicht passieren
             }
-            //Rochade scheiss Anfang
+            //Rochade Anfang
 
             if (zug.figur is Koenig koenig)
             {
@@ -683,13 +717,14 @@ namespace Schach
             {
                 turm.Bewegt = false;
             }
-            //Rochade scheiss Ende
+            //Rochade Ende
 
-            //Enpassant scheiss Anfang
-            
+            //Enpassant Anfang
+
             if (zug.figur is Bauer bauer)
             {
-                if(!zug.FigurWurdeSchonVorherGezogen) {
+                if (!zug.FigurWurdeSchonVorherGezogen)
+                {
                     bauer.bewegt = false;
                 }
             }
@@ -703,7 +738,7 @@ namespace Schach
                 }
           */
 
-            //Enpassant scheiss Ende
+            //Enpassant Ende
             //Bauer befoerdern
             if (zug.befoerdert != null)
             {
@@ -723,12 +758,12 @@ namespace Schach
                     Schachfeld.bewertung -= zug.figur.Wert;
                 }
                 */
-                
+
             }
-                //geschlagene Figur wieder hinstellen
-                if (zug.geschlageneFigur != null && zug.geschlageneFigur != zug.befoerdert)
-                {
-                    Schachfeld.schachfeld[zug.geschlageneFigur.row, zug.geschlageneFigur.col].Controls.Add(zug.geschlageneFigur);
+            //geschlagene Figur wieder hinstellen
+            if (zug.geschlageneFigur != null && zug.geschlageneFigur != zug.befoerdert)
+            {
+                Schachfeld.schachfeld[zug.geschlageneFigur.row, zug.geschlageneFigur.col].Controls.Add(zug.geschlageneFigur);
 
                 if (zug.geschlageneFigur.weiss)
                 {
@@ -741,12 +776,12 @@ namespace Schach
                     Schachfeld.bewertung -= zug.geschlageneFigur.Wert;
                 }
 
-                }
-                //eigentlich ueberfluessig
-                zug.geschlageneFigur = null;
+            }
+            //eigentlich ueberfluessig
+            zug.geschlageneFigur = null;
 
-                Schachfeld.weissAmZug = !Schachfeld.weissAmZug;
-            
+            Schachfeld.weissAmZug = !Schachfeld.weissAmZug;
+
         }
         List<Zug> MoeglicheZuegeHinzufuegen(Figur figur, Schachfeld schachfeld1)
         {
@@ -781,19 +816,19 @@ namespace Schach
                             Zug zumSpringer = new Zug(figur, zug.row, zug.col, new Springer(bauer.weiss, zug.row, zug.col, schwarzerSpringer));
                             Zug zumTurm = new Zug(figur, zug.row, zug.col, new Turm(bauer.weiss, zug.row, zug.col, schwarzerTurm));
                             Rzuege.Add(zug);
-                            Azuege.Add(zurDame);
                             Azuege.Add(zumLaeufer);
                             Azuege.Add(zumSpringer);
                             Azuege.Add(zumTurm);
+                            Azuege.Add(zurDame);
                         }
 
                     }
                 }
-                foreach(Zug zug in Rzuege)
+                foreach (Zug zug in Rzuege)
                 {
                     MoeglicheZuege.Remove(zug);
                 }
-                foreach(Zug zug in Azuege)
+                foreach (Zug zug in Azuege)
                 {
                     MoeglicheZuege.Add(zug);
                 }
@@ -807,77 +842,77 @@ namespace Schach
             //Der Zug muss immer durch ZugMachen gemacht werden, damit enpassant und die Rochade gemacht werden
             List<Zug> MoeglicheZuege = new List<Zug>();
             List<Figur> figurenAmZug = new List<Figur>();
-                figurenAmZug = schachfeld1.ListDerFiugrenAmZug();
+            figurenAmZug = schachfeld1.ListDerFiugrenAmZug();
             /*
             foreach (Figur figur in figurenAmZug)
             {
                 MoeglicheZuege.AddRange(MoeglicheZuegeHinzufuegen(figur, schachfeld1));
             }
             */
-            for(int i = 0; i < figurenAmZug.Count; i++)
+            for (int i = 0; i < figurenAmZug.Count; i++)
             {
                 MoeglicheZuege.AddRange(MoeglicheZuegeHinzufuegen(figurenAmZug[i], schachfeld1));
             }
 
-            
+
             return MoeglicheZuege;
         }
 
-            public void SchlechterZug(Schachfeld Schachfeld1)
+        public void SchlechterZug(Schachfeld Schachfeld1)
+        {
+            //Durch die Deep Coypy verschwinden die Figuren nicht mehr
+            Schachfeld Schachfeld = new Schachfeld(Schachfeld1);
+            List<Zug> MoeglicheZuege = MoeglicheZuegeFuerWeissOderSchwarzSuchen(Schachfeld);
+            Random random = new Random();
+            Debug.WriteLine(MoeglicheZuege.Count);
+            int randomIndex = random.Next(0, MoeglicheZuege.Count);
+            Zug zufaelligerZug = MoeglicheZuege[randomIndex];
+            Zug besterZug = zufaelligerZug;
+            int AltRow = besterZug.figur.row;
+            int AltCol = besterZug.figur.col;
+            besterZug.bewertung = besterZug.FigurenZaehlen(Schachfeld);
+            for (int i = 0; i < MoeglicheZuege.Count; i++)
             {
-                //Durch die Deep Coypy verschwinden die Figuren nicht mehr
-                Schachfeld Schachfeld = new Schachfeld(Schachfeld1);
-                List<Zug> MoeglicheZuege = MoeglicheZuegeFuerWeissOderSchwarzSuchen(Schachfeld);
-                Random random = new Random();
-                Debug.WriteLine(MoeglicheZuege.Count);
-                int randomIndex = random.Next(0, MoeglicheZuege.Count);
-                Zug zufaelligerZug = MoeglicheZuege[randomIndex];
-                Zug besterZug = zufaelligerZug;
-                int AltRow = besterZug.figur.row;
-                int AltCol = besterZug.figur.col;
-                besterZug.bewertung = besterZug.FigurenZaehlen(Schachfeld);
-                for (int i = 0; i < MoeglicheZuege.Count; i++)
+                AltRow = besterZug.figur.row;
+                AltCol = besterZug.figur.col;
+                MoeglicheZuege[i].bewertung = MoeglicheZuege[i].FigurenZaehlen(Schachfeld);
+                if (MoeglicheZuege[i].bewertung != besterZug.bewertung)
                 {
-                    AltRow = besterZug.figur.row;
-                    AltCol = besterZug.figur.col;
-                    MoeglicheZuege[i].bewertung = MoeglicheZuege[i].FigurenZaehlen(Schachfeld);
-                    if (MoeglicheZuege[i].bewertung != besterZug.bewertung)
-                    {
 
-                        if (!weiss)
+                    if (!weiss)
+                    {
+                        if (MoeglicheZuege[i].bewertung < besterZug.bewertung)
                         {
-                            if (MoeglicheZuege[i].bewertung < besterZug.bewertung)
-                            {
-                                besterZug = MoeglicheZuege[i];
-                            }
-                        }
-                        if (weiss)
-                        {
-                            if (MoeglicheZuege[i].bewertung > besterZug.bewertung)
-                            {
-                                besterZug = MoeglicheZuege[i];
-                            }
+                            besterZug = MoeglicheZuege[i];
                         }
                     }
-
-
+                    if (weiss)
+                    {
+                        if (MoeglicheZuege[i].bewertung > besterZug.bewertung)
+                        {
+                            besterZug = MoeglicheZuege[i];
+                        }
+                    }
                 }
-                Debug.WriteLine("Bewertung: " + besterZug.bewertung);
-                besterZug.figur = Schachfeld1.figurBei(AltRow, AltCol);
-                ZugMachen(besterZug, Schachfeld1);
-            }
-            public void ZufallsZug(Schachfeld Schachfeld1)
-            {
-                Schachfeld Schachfeld = new Schachfeld(Schachfeld1);
-                List<Zug> MoeglicheZuege = MoeglicheZuegeFuerWeissOderSchwarzSuchen(Schachfeld);
-                Random random = new Random();
-                Debug.WriteLine(MoeglicheZuege.Count);
-                int randomIndex = random.Next(0, MoeglicheZuege.Count);
-                Zug zufaelligerZug = MoeglicheZuege[randomIndex];
 
-                zufaelligerZug.figur = Schachfeld1.figurBei(zufaelligerZug.figur.row, zufaelligerZug.figur.col);
-                ZugMachen(zufaelligerZug, Schachfeld1);
 
             }
+            Debug.WriteLine("Bewertung: " + besterZug.bewertung);
+            besterZug.figur = Schachfeld1.figurBei(AltRow, AltCol);
+            ZugMachen(besterZug, Schachfeld1);
         }
-    } 
+        public void ZufallsZug(Schachfeld Schachfeld1)
+        {
+            Schachfeld Schachfeld = new Schachfeld(Schachfeld1);
+            List<Zug> MoeglicheZuege = MoeglicheZuegeFuerWeissOderSchwarzSuchen(Schachfeld);
+            Random random = new Random();
+            Debug.WriteLine(MoeglicheZuege.Count);
+            int randomIndex = random.Next(0, MoeglicheZuege.Count);
+            Zug zufaelligerZug = MoeglicheZuege[randomIndex];
+
+            zufaelligerZug.figur = Schachfeld1.figurBei(zufaelligerZug.figur.row, zufaelligerZug.figur.col);
+            ZugMachen(zufaelligerZug, Schachfeld1);
+
+        }
+    }
+}
