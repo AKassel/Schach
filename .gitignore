@@ -1,0 +1,7 @@
+# Build artifacts and editor metadata
+**/bin/
+**/obj/
+**/.vs/
+*.user
+*.suo
+*.cache

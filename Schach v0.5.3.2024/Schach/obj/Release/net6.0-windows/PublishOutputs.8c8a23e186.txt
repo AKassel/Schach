@@ -1,5 +1,0 @@
-C:\Users\Arne\Desktop\Schach.exe
-C:\Users\Arne\Desktop\Schach.dll
-C:\Users\Arne\Desktop\Schach.deps.json
-C:\Users\Arne\Desktop\Schach.runtimeconfig.json
-C:\Users\Arne\Desktop\Schach.pdb

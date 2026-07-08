@@ -1,9 +1,0 @@
-
-
-Bot
-1. Verhindern dass der König vom Bot gedeckte Figuren schlägt, wenn er im Schach steht, oder ein doppel Schach ignoriert
-2. Die Bewertung korrigieren (weder Figuren Zaehlen noch die zug.bewertung sind zuverlässig richtig	/ möglicherweise weil Bauern die befördert werden konnten tausende male in die Figuren Liste hinzugefügt wurden)
-3. Performance verbessern (3ms pro Zug zum Figuren Zählen)
-4. kann sein dass der Bot nicht enpassant schlagen kann, ist halt schwer zu testen
-4.1 der Bot kann meistens wenige Züge nachdem ein beförderter Bauer geschlagen wurde keine Züge mehr machen
-Die Test Methode bleibt nach 4sekunden stehen wenn sie beim ZugMachen rekursiv aufgerufen wird (ka warum der StackOverflow nur selten im debugger angezeigt wird)
