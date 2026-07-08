@@ -15,11 +15,12 @@ namespace Schach
         public int col;
         public int bewertung;
         public List<Zug> folgeZuege = new List<Zug>();
-        public Figur befoerdert;
-        public Figur geschlageneFigur;
+        public Figur? befoerdert;
+        public Figur? geschlageneFigur;
         public bool FigurWurdeSchonVorherGezogen;
         public bool Rochade = false;
-        public bool befoerdertFigur =false;
+        public bool befoerdertFigur = false;
+        public Bauer? vorherigesEnpassantBauer;
 
         public Zug(Figur figur, int row, int col)
         {

@@ -13,8 +13,8 @@ namespace Schach
         public bool weissAmZug = true;
         public List<Figur> WeisseFiguren = new List<Figur>();
         public List<Figur> SchwarzeFiguren = new List<Figur>();
-        public Bauer enpassantBauer;
-        public Bauer vorherigerEnpassantBauer;
+        public Bauer? enpassantBauer;
+        public Bauer? vorherigerEnpassantBauer;
         public int bewertung = 0;
         public Schachfeld(Panel[,] schachfeld)
         {

@@ -450,7 +450,7 @@ namespace Schach
 
             //EnpassantAnfang
 
-            //spielfeld.vorherigerEnpassantBauer = spielfeld.enpassantBauer;
+            zug.vorherigesEnpassantBauer = spielfeld.enpassantBauer;
             if (spielfeld.enpassantBauer != null)
             {
                 if (spielfeld.enpassantBauer.weiss == spielfeld.weissAmZug)
@@ -727,16 +727,14 @@ namespace Schach
                 {
                     bauer.bewegt = false;
                 }
+                bauer.enpassant = false;
             }
 
-            /*
-            if (Schachfeld.vorherigerEnpassantBauer != null)
-                {
-
-                Schachfeld.enpassantBauer = Schachfeld.vorherigerEnpassantBauer;
+            Schachfeld.enpassantBauer = zug.vorherigesEnpassantBauer;
+            if (Schachfeld.enpassantBauer != null)
+            {
                 Schachfeld.enpassantBauer.enpassant = true;
-                }
-          */
+            }
 
             //Enpassant Ende
             //Bauer befoerdern

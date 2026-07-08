@@ -19,7 +19,11 @@
             Bauer bauer = new Bauer(weiss, row, col, Image);
            
             bauer.enpassant = enpassant;
-            bauer.original = this.original;
+            bauer.original = original;
+            bauer.enpassantpanel = enpassantpanel;
+            bauer.enpassantSchlagenPanel = enpassantSchlagenPanel;
+            bauer.passant = passant;
+
             return bauer;
         }
         public bool Befoerdern()
